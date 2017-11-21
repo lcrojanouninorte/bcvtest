@@ -87,25 +87,26 @@ angular.module('app')
             //console.log('complete: ' + JSON.stringify(info));
             //return promisee!!!
             localDB.sync(db, {
-                filter: "bqvamos_filters/by_username",
-                query_params: { "username": usersname }, //TODO get this??
+                //filter: "bqvamos_filters/by_username",
+               // query_params: { "username": usersname }, //TODO get this??
                 live: true,
                 retry: true
-              })
-              .on('change', function(info) {
+              }).on('complete', function(info){
+                localDB.isActive = false;
+              }).on('change', function(info) {
                 localDB.isActive = true;
-               // console.log('change...');
+                console.log('change...');
                // console.log(info);
 
               })
               .on('paused', function() {
                 localDB.isActive = false;
-                //console.log('paused');
+              console.log('paused');
               })
               .on('active', function(data) {
                 localDB.isActive = true;
                 //show loading
-                //console.log('active');
+                console.log('active');
                 //console.log(data);
               })
               .on('denied', function(err) {
@@ -113,7 +114,7 @@ angular.module('app')
                // console.log('denied: ' + JSON.stringify(err));
               })
               .on('error', function(err) {
-               // console.log('error: ' + JSON.stringify(err));
+                console.log('error: ' + JSON.stringify(err));
               });
 
             //reject('Greeting ' + name + ' is not allowed.');
