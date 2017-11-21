@@ -62,9 +62,11 @@
 
         });
 
-    $log.debug('runBlock end');
     pouch.sync_local();
 
+
+    $log.debug('runBlock end');
+    
   }
 
 })();

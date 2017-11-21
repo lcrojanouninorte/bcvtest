@@ -779,6 +779,8 @@ angular.module('app.controllers', [])
       $scope.pouch = pouch;
       $scope.isReload = $stateParams.reload;
 
+    
+
 
 
 

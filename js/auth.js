@@ -77,6 +77,9 @@ angular.module('app')
         bqvamos_object.estado = "local";
         console.log("tomado de cookie");
         $log.debug(bqvamos_object);
+
+        
+
         return bqvamos_object;
     }
 

@@ -4,6 +4,7 @@ angular.module('app')
 
 .config(function(pouchDBProvider, POUCHDB_METHODS) {
   // Example for nolanlawson/pouchdb-authentication
+        
   var authMethods = {
     login: 'qify',
     logout: 'qify',
