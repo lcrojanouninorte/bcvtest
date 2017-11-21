@@ -347,7 +347,7 @@ angular.module('app.services', [])
     var incidencias = [];
 
 
-    //pouch.changes({ live: true });
+   // pouch.changes({ live: true });
 
     // document that tells PouchDB/CouchDB
     // to build up an index on doc.name

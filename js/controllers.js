@@ -777,13 +777,12 @@ angular.module('app.controllers', [])
     function(pouch, usSpinnerService, $scope, $stateParams, $log, Survey, auth, $state, $window) {
       $scope.showSpin = false;
       $scope.pouch = pouch;
+      $scope.isReload = $stateParams.reload;
 
 
 
 
-      if ($stateParams.reload) {
-        $window.location.reload();
-      }
+      
 
       $scope.user = auth.current_user;
       $scope.surveylist = [];
@@ -800,6 +799,7 @@ angular.module('app.controllers', [])
 
       Survey.load_all_surveys($scope.username).then(function(argument) {
         //Revisar que promesa devolvio?
+        $scope.reload();
         $scope.surveylist = Survey.surveys;
         $scope.incidenciaslist = Survey.incidencias;
         $scope.showSpin = false;
@@ -853,9 +853,14 @@ angular.module('app.controllers', [])
       }
 
 
+      $scope.reload = function(){
+        if ($stateParams.reload) {
+          $window.location.reload();
+        }
+      }
 
-
-
+     
+      
     }
   ])
 

@@ -1,3 +1,4 @@
+
 <ion-view title="Encuestas" id="page8" cache-view="false" >
   <ion-content padding="true" style="background: url(img/5TYxgpmmRAeljkRdgzCu_6558822.jpg) no-repeat center;background-size:cover;" class="has-header">
   
@@ -10,7 +11,7 @@
           <p>Bienvenido al Sitema de encuestas | {{user.estado}}</p>
 
         </h2positive>
-        <i ng-click="actualizar()" class="icon ion-refresh" style="font-size: 16px">Actualizar</i>
+        <i ng-click="actualizar()" class="icon ion-refresh" style="font-size: 16px">Sincronizar</i>
  
 
       </ion-item>
@@ -18,14 +19,17 @@
         <img src="img/logo BQCV slogan y 10 años.png" style="display: block; width: 40%; height: auto; margin-left: auto; margin-right: auto; margin-top: 20px; margin-bottom: 20px;">
       </div>
     </div>
+ 
+         
 
- <span us-spinner spinner-key="spinner-1"></span>
   
+
     <div ng-if="!isSupervisor()">
       <a ui-sref="informaciN" id="dashboard-button46" ng-click="new_model()" class="wow fadeInUp button button-balanced  button-block icon ion-android-add-circle"> Crear Nueva Encuesta</a>
+       <span us-spinner spinner-key="spinner-1"></span>
       <div class="list card" id="dashboard-card213">
-        <ion-item class="item-divider bar bar-positive" id="dashboard-list-item-divider8"> ENCUESTAS REALIZADAS</ion-item>
-        <span us-spinner spinner-on="pouch.isActive"></span>
+        <ion-item class="item-divider bar bar-positive" id="dashboard-list-item-divider8"> ENCUESTAS REALIZADAS <span us-spinner="{lines: 5, width:15, trail:50, scale:0.5, radius:9, color: '#fff'}" spinner-on="pouch.isActive" ></span></ion-item>
+        
         <form id="dashboard-form36" class="list">
           <label class="item item-input" id="dashboard-search1" name="search">
             <i class="icon ion-search placeholder-icon"></i>
@@ -74,6 +78,8 @@
 
     </div>
         Cookies? {{!pouch.isActive}}
+        Cargando? {{pouch.isActive}}
+        
   </ion-content>
 
 </ion-view>
