@@ -80,6 +80,7 @@ angular.module('app')
         localDB.isActive = true;
         //UNDIRACTIONAL thent bidirectional for performance test!!!
         localDB.replicate.from(db, {
+            batch_size: 500,
            // filter: "bqvamos_filters/by_username",
             //query_params: { "username": usersname }, //TODO get this??
             retry: true
