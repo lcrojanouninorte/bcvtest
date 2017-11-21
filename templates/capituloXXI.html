@@ -1,0 +1,36 @@
+<ion-view title="Capitulo XXI" id="page29">
+  <ion-content padding="true" class="has-header">
+  <form name="form" class="form-horizontal"  ng-submit="submitForm('fINDATOSENCUESTADO')" novalidate>
+    <h3 id="capituloXXI-heading27" style="color:#000000;text-align:center;">CAPÍTULO XXI. MÓDULO COMO VAMOS (MCV) </h3>
+    <ion-list id="capituloXXI-list61">
+      <ion-item class="item-divider item-text-wrap" id="capituloXXI-list-item-divider110"> CC11. ¿Usted conoce, ha oído hablar, o ha visto algo de <b>Barranquilla/Soledad/Puerto Colombia</b> Cómo Vamos? RU</ion-item>
+      <ion-radio id="capituloXXI-radio193" ng-model="survey.cc11" ng-value="1" name="cc11" required>1 Sí -> <b>PASE A PREGUNTA CC12</b></ion-radio>
+      <ion-radio id="capituloXXI-radio195" ng-model="survey.cc11" ng-value="2" name="cc11">2 No</ion-radio>
+
+
+
+          <div ng-show="survey.cc11 != 2">
+        <ion-item class="item-divider item-text-wrap" id="capituloX-list-item-divider19"> CC12. (Nueva) ¿Y cómo se enteró del programa Como Vamos? <b>(ENC NO LEA LAS OPCIONES. ESPERE RESPUESTAS Y REGISTRE) RM</b> </ion-item>
+        <ion-checkbox id="capituloX-checkbox1" ng-model="survey.cc121" name="cc121" class="item-text-wrap">1. Informes de Prensa</ion-checkbox>
+        <ion-checkbox id="capituloX-checkbox2" ng-model="survey.cc122" name="cc122" class="item-text-wrap">2. Entrevistas o notas radiales</ion-checkbox>
+        <ion-checkbox id="capituloX-checkbox3" ng-model="survey.cc123" name="cc123" class="item-text-wrap">3. Noticieros de televisión</ion-checkbox>
+        <ion-checkbox id="capituloX-checkbox4" ng-model="survey.cc124" name="cc124" class="item-text-wrap">4. Boletines o informes del programa</ion-checkbox>
+        <ion-checkbox id="capituloX-checkbox5" ng-model="survey.cc125" name="cc125" class="item-text-wrap">5. A través de Internet (redes sociales, página web, otros) </ion-checkbox>
+        <ion-checkbox id="capituloX-checkbox6" ng-model="survey.cc126" name="cc126" class="item-text-wrap">6. Presentación o conferencia </ion-checkbox>
+        <ion-checkbox id="capituloX-checkbox7" ng-model="survey.cc127" name="cc127" class="item-text-wrap">7. Alguien le comentó / Un amigo le comentó</ion-checkbox>
+        <ion-checkbox id="capituloX-checkbox8" ng-model="survey.cc128" name="cc128" class="item-text-wrap">8. Programas de Opinión / Programas de televisión </ion-checkbox>
+
+        <label class="item item-input row" id="capituloX-input10">
+          <span class="input-label col">89. Otro, ¿cuál? </span>
+          <input class="col" ng-model="survey.cc12otro"  type="text" placeholder="" >
+         </label>
+ 
+      </div>
+ 
+    </ion-list>
+     
+     <ng-include src="'templates/seccionalertPart.html'" scope="" onload=""></ng-include>
+     <button id="capituloIdentificaciN-button265" class="button button-positive  button-block icon-right ion-android-arrow-forward" type='submit' ng-disabled="form.$invalid">Siguiente</button>
+     </form>
+  </ion-content>
+</ion-view>

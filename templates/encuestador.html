@@ -1,0 +1,63 @@
+
+<ion-view title="Encuestas por {{username}}" id="page8" cache-view="false" >
+  <ion-content padding="true" style="background: url(img/5TYxgpmmRAeljkRdgzCu_6558822.jpg) no-repeat center;background-size:cover;" class="has-header">
+ 
+    <div class="list card animated fadeInDown" id="dashboard-card211">
+      <ion-item class="item-avatar item-icon-right positive" id="dashboard-list-item81">
+        <img src="img/encuesta.png">
+
+        <h2positive>{{user.name}}
+          <p>Bienvenido al Sitema de encuestas | {{user.estado}}</p>
+          <i ng-click="actualizar()" class="icon ion-refresh" style="font-size: 16px;">Actualizar</i>
+          <ion-option-button class="button-balanced">Añadir</ion-option-button>
+        </h2positive>
+      </ion-item>
+      <div class=" item item-card">
+        <h2>Encuestas del usuario: <span class="calm"><b> {{username}}</b></span></h2>
+      </div>
+    </div>
+
+    <div ng-show="isSupervisor">
+       
+      <div class="list card" id="dashboard-card213">
+        <ion-item class="item-divider bar bar-positive" id="dashboard-list-item-divider8"> ENCUESTAS REALIZADAS</ion-item>
+        <form id="dashboard-form36" class="list">
+          <label class="item item-input" id="dashboard-search1" name="search">
+            <i class="icon ion-search placeholder-icon"></i>
+            <input type="search" placeholder="Buscar por IDM" ng-model="search">
+          </label>
+        </form>
+ 
+<span us-spinner spinner-on="showSpin"></span>
+
+<span us-spinner spinner-on="pouch.isActive"></span>
+        <ion-item  ng-class="{'balanced':survey.estado=='finalizado'}" class="item-icon-left survey-item" id="dashboard-list-item86"  ng-repeat="survey in surveylist | filter:search | orderBy:['IDM','estado']:true" ng-click="load(survey._id, survey.estado)">
+
+          <i ng-class="{'balanced':survey.estado=='finalizado','ion-android-done':survey.estado=='finalizado', 'ion-alert':survey.estado!='finalizado'}"></i> 
+          IDM: {{survey.username}}_{{survey.IDM}} <br>
+          Fecha: {{survey.fecha}} - Hora: {{survey.hinicio}}
+          <span class="item-note  item-text-wrap" ng-class="{'calm': survey.estado_supervision=='finalizado'}"> 
+          Supervición: {{survey.estado_supervision}} - Estado: {{survey.estado}} - Zona: {{survey.zona}} - Vivienda {{survey.vivienda}}  
+          </span>
+        </ion-item>
+        <ion-item class="item-divider" id="dashboard-list-item-divider9"> </ion-item>
+      </div>
+
+      <div class="list card" id="dashboard-card213">
+        <ion-item class="item-divider bar bar-positive" id="dashboard-list-item-divider8"> INCIDENCIAS REGISTRADAS</ion-item>
+        <form id="dashboard-form3633" class="list">
+          <label class="item item-input" id="dashboard-search1" name="search_inc">
+            <i class="icon ion-search placeholder-icon"></i>
+            <input type="search" placeholder="Buscar por IDM" ng-model="search_inc">
+          </label>
+        </form>
+        <ion-item class="item-icon-left survey-item" id="dashboard-list-item886"  ng-repeat="incidencia in incidenciaslist | filter:search_inc" ng-click="load(incidencia._id, incidencia.estado, incidencia.R)">
+          <i class="icon ion-ionic"></i> Incidencia: F{{incidencia.R}} - {{incidencia.IDM}} 
+          <span class="item-note">Supervición: {{incidencia.estado_supervision}} - Zona: {{incidencia.zona}} - Vivienda {{incidencia.vivienda}} - Sector {{incidencia.sector}} - Manzana {{incidencia.manzana}} - Fecha: {{incidencia.fecha}} - Hora: {{incidencia.hinicio}}</span>
+        </ion-item>
+        <ion-item class="item-divider" id="dashboard-list-item-divider9"> </ion-item>
+      </div>
+    </div>
+
+ 
+</ion-view>

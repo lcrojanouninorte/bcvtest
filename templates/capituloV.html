@@ -1,0 +1,22 @@
+<ion-view title="Capitulo V" id="page13">
+  <ion-content padding="true" class="has-header">
+   <form name="form" class="form-horizontal"  ng-submit="submitForm('capituloVI')" novalidate>
+    <h3 id="capituloV-heading10" style="color:#000000;text-align:center;">CAPÍTULO V. ALIMENTACIÓN (AL)</h3>
+    <ion-list id="capituloV-list22">
+       <ion-item class="item-divider item-text-wrap" id="capituloV-list-item-divider26">  <b>AL1.</b> En las últimas CUATRO semanas, ¿usted o algún miembro de su hogar tuvo que comer menos de TRES comidas diarias <u>porque no había suficientes alimentos</u>? <b>RU</b></ion-item>
+      <ion-radio id="capituloV-radio101" name="al1" ng-model="survey.al1" ng-value="1" class="col" required>1. SI</ion-radio>
+      <ion-radio id="capituloV-radio102" name="al1" ng-model="survey.al1" ng-value="2" class="col" ng-click="survey.al2=''">2. No <b>-> PASE A ED25</b></ion-radio>
+      <div ng-if="survey.al1 == 1">
+        <ion-item class="item-divider item-text-wrap" id="capituloV-list-item-divider27" ng-show="survey.al1 == 1"> AL2. ¿Con qué frecuencia sucedió esto? (ENC: LEA) RU</ion-item>
+        <ion-radio id="capituloV-radio190" name="al2" ng-value="1" ng-model="survey.al2"  class="item-text-wrap" ng-required='survey.al1 == 1'>1. Pocas veces, una o dos veces en las últimas cuatro semanas</ion-radio>
+        <ion-radio id="capituloV-radio191" name="al2" ng-value="2" ng-model="survey.al2" class="item-text-wrap">2. A veces, entre tres y diez veces las últimas cuatro semanas</ion-radio>
+        <ion-radio id="capituloV-radio192" name="al2" ng-value="3" ng-model="survey.al2" class="item-text-wrap">3. Con frecuencia más de diez veces en las últimas cuatro semanas</ion-radio>
+        </div>
+    </ion-list>
+      <ng-include src="'templates/seccionalertPart.html'" scope="" onload=""></ng-include>
+
+     <button  class="button button-positive  button-block icon-right ion-android-arrow-forward" type='submit' ng-disabled="form.$invalid">Siguiente</button>
+    </form>
+    
+  </ion-content>
+</ion-view>

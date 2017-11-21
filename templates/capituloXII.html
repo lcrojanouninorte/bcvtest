@@ -1,0 +1,68 @@
+<ion-view title="Capitulo XII" id="page19">
+  <ion-content padding="true" class="has-header">
+     <form name="form" class="form-horizontal"  ng-submit="submitForm('capituloXIII')" novalidate>
+
+    <h3 id="capituloXII-heading17" style="color:#000000;text-align:center;">CAPÍTULO XII. PARTICIPACIÓN CIUDADANA (PC)</h3>
+    <ion-list id="capituloXII-list17">
+      <!--
+      <ion-item class="item-divider item-text-wrap" id="capituloXII-list-item-divider61"> PC1. Para resolver un problema que lo haya afectado a usted o a su comunidad, o para apoyar a otras personas, ideas o hechos que lo hayan motivado, durante el último año qué acciones realizó Ud: (ENC: NO LEA, ESPERE LA RESPUESTA Y REGISTRELA) RM.</ion-item>
+        <ion-checkbox id="capituloXII-checkbox9"  ng-model="survey.pc11" name="pc11"name="pc11" class="item-text-wrap">1. Presentó quejas o solicitó apoyos de las autoridades o funcionarios correspondientes</ion-checkbox>
+        <ion-checkbox id="capituloXII-checkbox10" ng-model="survey.pc12" name="pc12" class="item-text-wrap">2. Se organizó con otras personas afectadas y firmó peticiones o cartas</ion-checkbox>
+        <ion-checkbox id="capituloXII-checkbox33" ng-model="survey.pc13" name="pc13" class="item-text-wrap">3. Se contactó con medios de comunicación</ion-checkbox>
+        <ion-checkbox id="capituloXII-checkbox34" ng-model="survey.pc14" name="pc14" class="item-text-wrap">4. Asistió a marchas, caminatas o manifestaciones</ion-checkbox>
+        <ion-checkbox id="capituloXII-checkbox35" ng-model="survey.pc15" name="pc15" class="item-text-wrap">5. Solicitó apoyo a personas que usted considera influyentes o poderosas</ion-checkbox>
+        <ion-checkbox id="capituloXII-checkbox36" ng-model="survey.pc16" name="pc16" class="item-text-wrap">6. Participó como voluntario en alguna actividad u organización a beneficio de una comunidad o grupo</ion-checkbox>
+        <ion-checkbox id="capituloXII-checkbox37" ng-model="survey.pc17" name="pc17" class="item-text-wrap">7. Utilizó las redes sociales (Facebook, Twitter) o usó los medios de comunicación u otros medios electrónicos como correos, mensajes de texto, etc.</ion-checkbox>
+        <ion-checkbox id="capituloXII-checkbox38" ng-model="survey.pc18" name="pc18" class="item-text-wrap">8. Recogió fondos o donó dinero</ion-checkbox>
+        <label class="item item-input row" id="capituloX-input10">
+          <span class="input-label col">9. Otra, ¿cuál? </span>
+          <input class="col" ng-model="survey.pc1otro"  type="text" placeholder="" >
+         </label>
+        <ion-checkbox id="capituloXII-checkbox39" ng-model="survey.pc110" name="pc110" class="item-text-wrap">10. No realizó ninguna acción – (ENC:PASE A PC7)</ion-checkbox>
+    
+      <div ng-show="!survey.pc110">
+        <ion-item class="item-divider item-text-wrap" id="capituloXII-list-item-divider62"> PC3. Entre las siguientes opciones, ¿cuál considera que es la principal razón que lo motiva a participar en las anteriores actividades? (ENC: LEA) RU</ion-item>
+        <ion-radio ng-click="survey.pc3otro=''" id="capituloXII-radio113" ng-model="survey.pc3" ng-value="1" name="pc3" ng-required="survey.pc110 != true">1. El Estado no ha servido para solucionar problemas</ion-radio>
+        <ion-radio ng-click="survey.pc3otro=''" id="capituloXII-radio112" ng-model="survey.pc3" ng-value="2" name="pc3">2. un deber participar, es interesante y genera satisfacción</ion-radio>
+        <ion-radio ng-click="survey.pc3otro=''" id="capituloXII-radio114" ng-model="survey.pc3" ng-value="3" name="pc3">3. Para recibir beneficios personales, o reconocimiento social</ion-radio>
+        <label class="item item-input row" id="capituloX-input10">
+          <span class="input-label col">89 Otra. ¿Cuál? </span>
+          <input class="col" ng-model="survey.pc3otro"  type="text" placeholder="" ng-click="survey.pc3 = 89" ng-required="survey.pc3==89 && survey.pc110 != true">
+          <ion-radio   class="col" name="pc3" ng-model="survey.pc3" ng-value="89" ></ion-radio>
+        </label>
+        <ion-radio ng-click="survey.pc3otro=''" id="capituloXII-radio305"  ng-model="survey.pc3" ng-value="92" name="pc3">92. (ENC: NO LEA) No sabe</ion-radio>
+      </div>
+-->
+
+
+      <ion-item class="item-divider item-text-wrap" id="capituloXII-list-item-divider63"> PC7. En el último año usted o algún miembro de este hogar ha participado en alguna o algunas de las siguientes organizaciones, espacios o redes. (ENC: LEA LAS OPCIONES Y REGISTRE SOLO LAS QUE RESPONDAN “SI") RM</ion-item>
+      <ion-checkbox id="capituloXII-checkbox40" ng-model="survey.pc71" name="pc71" class="item-text-wrap">1. Juntas de acción comunal o grupos de vecinos</ion-checkbox>
+      <ion-checkbox id="capituloXII-checkbox41" ng-model="survey.pc72" name="pc72" class="item-text-wrap">2. Organizaciones comunales de vigilancia y seguridad</ion-checkbox>
+      <ion-checkbox id="capituloXII-checkbox42" ng-model="survey.pc73" name="pc73" class="item-text-wrap">3. Sindicatos, Cooperativas o Gremios Económicos</ion-checkbox>
+      <ion-checkbox id="capituloXII-checkbox43" ng-model="survey.pc74" name="pc74" class="item-text-wrap">4. Grupos, clubes o asociaciones culturales (teatro, danza, música, etc.)</ion-checkbox>
+      <ion-checkbox id="capituloXII-checkbox44" ng-model="survey.pc75" name="pc75" class="item-text-wrap">5. Asociaciones de padres de familia</ion-checkbox>
+      <ion-checkbox id="capituloXII-checkbox45" ng-model="survey.pc76" name="pc76" class="item-text-wrap">6. Grupos, clubes o asociaciones deportivas o de recreación</ion-checkbox>
+      <ion-checkbox id="capituloXII-checkbox46" ng-model="survey.pc77" name="pc77" class="item-text-wrap">7. Movimientos sociales</ion-checkbox>
+      <ion-checkbox id="capituloXII-checkbox47" ng-model="survey.pc78" name="pc78" class="item-text-wrap">8. Grupos cívicos, colectivos ciudadanos</ion-checkbox>
+      <ion-checkbox id="capituloXII-checkbox48" ng-model="survey.pc79" name="pc79" class="item-text-wrap">9. Asociaciones voluntarias, de caridad o de beneficencia</ion-checkbox>
+      <ion-checkbox id="capituloXII-checkbox49" ng-model="survey.pc710" name="pc710" class="item-text-wrap">10. Organizaciones o grupos de defensa y protección del medio ambiente o de los animales</ion-checkbox>
+      <ion-checkbox id="capituloXII-checkbox50" ng-model="survey.pc711" name="pc711" class="item-text-wrap">11. Organizaciones profesionales o universitarias</ion-checkbox>
+      <ion-checkbox id="capituloXII-checkbox52" ng-model="survey.pc712" name="pc712" class="item-text-wrap">12. Grupos u organizaciones que promueven los derechos humanos, sociales, étnicos y sexuales</ion-checkbox>
+      <ion-checkbox id="capituloXII-checkbox51" ng-model="survey.pc713" name="pc713" class="item-text-wrap">13. Espacios de participación ciudadana, juntas, comités, consejos de desarrollo, programas o acciones de políticas públicas en su barrio o ciudad (promovidos por el gobierno)</ion-checkbox>
+      <ion-checkbox id="capituloXII-checkbox53" ng-model="survey.pc714" name="pc714"
+        class="item-text-wrap">14. Redes sociales que promueven iniciativas ciudadanas, ambientales, cívicas, culturales o deportivas</ion-checkbox>
+      <ion-checkbox id="capituloXII-checkbox54" ng-model="survey.pc715" name="pc715" class="item-text-wrap">15. Partidos, movimientos o grupos políticos</ion-checkbox>
+      <ion-checkbox id="capituloXII-checkbox55" ng-model="survey.pc716" name="pc716" class="item-text-wrap">16. Organizaciones religiosas que realizan acciones comunitarias</ion-checkbox>
+    
+       <label class="item item-input row" id="capituloX-input10">
+          <span class="input-label col">89. ¿Otra(o)? </span>
+          <input class="col" ng-model="survey.pc7otro"  type="text" placeholder="" >
+        </label>
+      <ion-checkbox id="capituloXII-checkbox57" ng-model="survey.pc790" name="pc790" class="item-text-wrap">17. Ninguno (a)</ion-checkbox>
+    </div>
+    <ng-include src="'templates/seccionalertPart.html'" scope="" onload=""></ng-include>
+
+     <button  class="button button-positive  button-block icon-right ion-android-arrow-forward" type='submit' ng-disabled="form.$invalid">Siguiente</button>
+    </form>
+  </ion-content>
+</ion-view>

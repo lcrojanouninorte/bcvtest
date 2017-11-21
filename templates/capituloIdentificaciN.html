@@ -1,0 +1,99 @@
+<ion-view title="Capitulo Identificación" id="page30">
+  <ion-content padding="true" class="has-header">
+ 
+  <form name="form" class="form-horizontal"  ng-submit="submitForm('fILTROS')" novalidate>
+    
+
+    <h4 id="capituloIdentificaciN-heading28" style="color:#000000;text-align:center;">UNIVERSIDAD DEL NORTE 
+- BARRANQUILLA COMO VAMOS  2017 
+</h4>
+
+            
+
+    <ion-list id="capituloIdentificaciN-list62">
+      <ion-item class="item-divider item-text-wrap" id="capituloIdentificaciN-list-item-divider129"> Identificador de manzana:</ion-item>
+      <label class="item item-input" id="capituloIdentificaciN-input80" name="IDM">
+        <span class="input-label">IDM</span>
+        <input type="text" placeholder="{{survey.IDM || 'Alerta: Esta encuesta no se guardara'}}" ng-model="survey.IDM" ng-disabled="true" required>
+      </label>
+      <div>
+        
+      </div>
+      <label class="item item-input" id="capituloIdentificaciN-input119">
+        <span class="input-label">Sector *</span>
+        <input type="number" placeholder="N° del sector en la hoja" ng-model="survey.sector" validate-on="dirty" required-message="'Yo! This field is required..'" required>
+      </label>
+      <label class="item item-input" id="capituloIdentificaciN-input120">
+        <span class="input-label">Sección</span>
+        <input type="number" placeholder="N° de sección en la hoja" ng-model="survey.seccion" required >
+      </label>
+      <label class="item item-input" id="capituloIdentificaciN-input121">
+        <span class="input-label">Manzana</span>
+        <input type="number" placeholder="N° de Manzana en la hoja" ng-model="survey.manzana" required >
+      </label>
+      <ion-item class="item-divider item-text-wrap" id="capituloIdentificaciN-list-item-divider111"> REGISTRO DE RECORRIDO</ion-item>
+      <label class="item item-input" id="capituloIdentificaciN-input82" name="recorrido">
+        <span class="input-label">N°:</span>
+        <input type="number" placeholder="N° de la casa en el recorrido" ng-model="survey.vivienda" required >
+      </label>
+      <ion-item class="item-divider item-text-wrap" id="capituloIdentificaciN-list-item-divider130"> Fecha y Hora</ion-item>
+      <label class="item item-input" id="capituloIdentificaciN-input78" name="hinicio">
+        <span class="input-label">Hora de inicio (formato militar):</span>
+        <input type="text" placeholder="" ng-model="survey.hinicio" ng-disabled="true" required >
+      </label>
+      <label class="item item-input" id="capituloIdentificaciN-input79" name="fecha">
+        <span class="input-label">Fecha de la encuesta:</span>
+       <input type="text" placeholder="" ng-model="survey.fecha" ng-disabled="true" required >
+      </label>
+    </ion-list>
+    <!--
+    <ion-list id="capituloIdentificaciN-list63">
+      <ion-item class="item-divider item-text-wrap" id="capituloIdentificaciN-list-item-divider128">  Cuadro de incidencias actual: F{{survey.R}}, Click en e para más información <i class="ion-help-circled" ng-click="popup.show('Ayuda','Usted puede registrar la incidencias F3 accediento al menú: <i class=\'ion-navicon-round\'></i>, La F2 al contestar proximas preguntas y la F0 al finalizar la encuesta de forma correcta.')"></i> </ion-item>
+      <ion-radio class="balanced" ng-disabled="true" id="capituloIdentificaciN-radio252" name="a" ng-model="survey.R" ng-value="0" class="item-text-wrap"  required>Encuesta efectivamente realizada (F0)</ion-radio>
+      <ion-radio class="assertive" ng-disabled="true" id="capituloIdentificaciN-radio253" name="a" ng-model="survey.R" ng-value="1" required>Hogar rehúsa (F1)</ion-radio>
+      <ion-radio class="assertive" ng-disabled="true" id="capituloIdentificaciN-radio254" name="a" ng-model="survey.R" ng-value="2" required>Entrevistado rehúsa (F2)</ion-radio>
+      <ion-radio class="assertive" ng-disabled="true" id="capituloIdentificaciN-radio255" name="a" ng-model="survey.R" ng-value="3" required>Entrevistado abandona (F3)</ion-radio>
+      <ion-radio class="assertive" ng-disabled="true" id="capituloIdentificaciN-radio256" name="a" ng-model="survey.R" ng-value="4" required>Hogar no atiende (F4)</ion-radio>
+    </ion-list>
+    -->
+    <ion-list ng-show="user.role=='surpervisor'" id="capituloIdentificaciN-list69">
+      <label class="item item-input" id="capituloIdentificaciN-input36">
+        <span class="input-label">Revisión</span>
+        <input type="date" placeholder=""   >
+      </label>
+      <label class="item item-input" id="capituloIdentificaciN-input37">
+        <span class="input-label">Critica</span>
+        <input type="date" placeholder=""   >
+      </label>
+    </ion-list>
+    <div class="spacer" style="width: 748px; height: 25px;"></div>
+    <h3 id="capituloIdentificaciN-heading34" style="color:#000000;text-align:center;"> <i class="wow infinite flash positive ion-help-circled" ng-click="popup.show('Ayuda','Antes de ir a una localidad, debe consultar a el nombre de esta.')"></i> ZONAS DE LA CIUDAD</h3>
+    <ion-list id="capituloIdentificaciN-list78" >
+      <ion-item class="item-divider" id="capituloIdentificaciN-list-item-divider117"> Barranquilla</ion-item>
+      <ion-radio id="capituloIdentificaciN-radio278" name="localidad" ng-model="survey.localidad" ng-value="1" required>Riomar </ion-radio>
+      <ion-radio id="capituloIdentificaciN-radio279" name="localidad" ng-model="survey.localidad" ng-value="2" >Norte Centro Histórico </ion-radio>
+      <ion-radio id="capituloIdentificaciN-radio280" name="localidad" ng-model="survey.localidad" ng-value="3" >Suroriental </ion-radio>
+      <ion-radio id="capituloIdentificaciN-radio281" name="localidad" ng-model="survey.localidad" ng-value="4" >Metropolitana </ion-radio>
+      <ion-radio id="capituloIdentificaciN-radio282" name="localidad" ng-model="survey.localidad" ng-value="5" > Suroccidente</ion-radio>
+
+      <ion-item class="item-divider" id="capituloIdentificaciN-list-item-divider140"> Puerto Colombia</ion-item>
+      <ion-radio id="capituloIdentificaciN-radio283" name="localidad" ng-model="survey.localidad" ng-value="6" >Corredor Universitario</ion-radio>
+      <ion-radio id="capituloIdentificaciN-radio284" name="localidad" ng-model="survey.localidad" ng-value="7" >Cabecera Municipal</ion-radio>
+
+      <ion-item class="item-divider" id="capituloIdentificaciN-list-item-divider141" > Soledad</ion-item>
+      <ion-radio id="capituloIdentificaciN-radio284" name="localidad" ng-model="survey.localidad" ng-value="8" >Cabecera Municipal</ion-radio>
+      <ion-radio id="capituloIdentificaciN-radio285" name="localidad" ng-model="survey.localidad" ng-value="9" >Resto</ion-radio>
+    </ion-list>
+     <ng-include src="'templates/seccionalertPart.html'" scope="" onload=""></ng-include>
+
+<div class="col">
+  <button ng-if="isSupervisor()" class=" round  button button-balanced  button-block icon-right ion-android-arrow-forward item-icon-left" id="menu-list-item119" ui-sref="capSupervicion({id: survey._id})" menu-close="" data-componentid="list-item119">
+    <i class="icon ion-ionic"></i>SUPERVISAR</button>
+   
+  <button id="capituloIdentificaciN-button265" class=" round  button button-positive  button-block icon-right ion-android-arrow-forward" type='submit' ng-disabled="form.$invalid">Siguiente</button>
+</div>
+
+   <!-- <a ui-sref="tabsController.fILTROS" id="capituloIdentificaciN-button265" class="button button-positive  button-block icon-right ion-android-arrow-forward">Siguiente</a>-->
+  </form>
+  </ion-content>
+</ion-view>

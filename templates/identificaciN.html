@@ -1,0 +1,76 @@
+<ion-view title="Identificación" id="page3">
+  <ion-content padding="true" class="has-header">
+
+    <ion-list id="identificaciN-list3">
+      <div class="item item-body row" id="identificaciN-list-item-container5">
+        <form id="identificaciN-form1" class="list row">
+          <h4 id="identificaciN-heading4" style="color:#000000;text-align:center;" class="col">Area:</h4>
+          <ion-radio id="identificaciN-radio1" name="area" ng-model="data.zona" class="col">Urbana</ion-radio>
+          <ion-radio id="identificaciN-radio4" name="area" ng-model="data.zona" class="col">Rural</ion-radio>
+          <label class="item item-input col col-33" id="identificaciN-input60" name="id">
+            <span class="input-label">Formulario No.</span>
+            <input type="number" placeholder="________________" ng-model="data.IDM">
+          </label>
+        </form>
+      </div>
+      <div class="item item-body row" id="identificaciN-list-item-container8">
+        <form id="identificaciN-form6" class="list row">
+          <label class="item item-input col" id="identificaciN-input3" name="ciudad">
+            <span class="input-label">Ciudad</span>
+            <input type="text" placeholder="Ciudad">
+          </label>
+          <label class="item item-input col" id="identificaciN-input4" name="zona">
+            <span class="input-label">Zona</span>
+            <input type="text" placeholder="Zona">
+          </label>
+        </form>
+      </div>
+      <div class="item item-body row" id="identificaciN-list-item-container9">
+        <form id="identificaciN-form7" class="list row">
+          <label class="item item-input" id="identificaciN-input61" name="sector">
+            <span class="input-label">Sector</span>
+            <input type="text" placeholder="Sector">
+          </label>
+          <label class="item item-input" id="identificaciN-input62" name="seccion">
+            <span class="input-label">Sección</span>
+            <input type="text" placeholder="Sección">
+          </label>
+          <label class="item item-input" id="identificaciN-input63" name="manzana">
+            <span class="input-label">Manzana</span>
+            <input type="text" placeholder="Manzana">
+          </label>
+        </form>
+      </div>
+      <div class="item item-body row" id="identificaciN-list-item-container10">
+        <form id="identificaciN-form8" class="list row">
+          <label class="item item-input col" id="identificaciN-textarea5" name="vivienda">
+            <span class="input-label">Vivienda</span><textarea placeholder="Sector 1"></textarea></label>
+          <ion-item class="range range-balanced" id="identificaciN-range1">Estrato
+            <input type="range" value="0" min="1" max="6" step="1" name="estrato">
+          </ion-item>
+        </form>
+      </div>
+      <div class="item item-body row" id="identificaciN-list-item-container11">
+        <form id="identificaciN-form11" class="list row">
+          <label class="item item-input col" id="identificaciN-input64" name="fecha">
+            <span class="input-label">Fecha</span>
+            <input type="date" placeholder="fecha">
+          </label>
+        </form>
+      </div>
+      <div class="item item-body row" id="identificaciN-list-item-container12">
+        <form id="identificaciN-form170" class="list row">
+          <label class="item item-input col" id="identificaciN-input65" name="hinicio">
+            <span class="input-label">Hora Inicio</span>
+            <input type="time" placeholder="hinicio">
+          </label>
+          <label class="item item-input col" id="identificaciN-input66" name="hfinal">
+            <span class="input-label">Hora Final</span>
+            <input type="time" placeholder="hinicio">
+          </label>
+        </form>
+      </div>
+    </ion-list>
+    <a ui-sref="tabsController.fILTROS_tab1" id="identificaciN-button2" class="button button-positive  button-block">Siguiente</a>
+  </ion-content>
+</ion-view>

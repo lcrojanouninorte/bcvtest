@@ -1,0 +1,43 @@
+<ion-view title="Capitulo XVI" id="page23">
+  <ion-content padding="true" class="has-header">
+   <form name="form" class="form-horizontal"  ng-submit="submitForm('capituloXVII2')" novalidate>
+
+    <h3 id="capituloXVI-heading21" style="color:#000000;text-align:center;">CAPÍTULO XVI. ESPACIO PÚBLICO (EP)</h3>
+    <ion-list id="capituloXVI-list49">
+      <ion-item class="item-divider item-text-wrap" id="capituloXVI-list-item-divider75"> EP1. <b>(ENC: ENTREGUE TARJETA SATISFACCIÓN)</b> Ahora quisiera que me diera su opinión sobre el espacio público en la ciudad. ¿Usted qué tan satisfecho(a) se siente con el espacio público disponible en la ciudad usando estas opciones? Puede utilizar cualquier
+        número de la escala. RU</ion-item>
+    </ion-list>
+    <ion-list id="capituloXVI-list50">
+      <div class="item item-body" id="capituloXVI-list-item-container153">
+        <div id="capituloXVI-container29" class="row">
+          <div id="capituloXVI-markdown259" style="text-align:center;" class="show-list-numbers-and-dots col">
+            <p style="margin-top:0px;color:#000000;">Muy insatisfecho</p>
+          </div>
+          <div id="capituloXVI-markdown260" style="text-align:center;" class="show-list-numbers-and-dots col">
+            <p style="margin-top:0px;color:#000000;">Algo insatisfecho</p>
+          </div>
+          <div id="capituloXVI-markdown261" style="text-align:center;" class="show-list-numbers-and-dots col">
+            <p style="margin-top:0px;color:#000000;">Ni satisfecho ni insatisfecho</p>
+          </div>
+          <div id="capituloXVI-markdown336" style="text-align:center;" class="show-list-numbers-and-dots col">
+            <p style="margin-top:0px;color:#000000;">Algo satisfecho</p>
+          </div>
+          <div id="capituloXVI-markdown337" style="text-align:center;" class="show-list-numbers-and-dots col">
+            <p style="margin-top:0px;color:#000000;">Muy satisfecho</p>
+          </div>
+        </div>
+        <div  class="list row">
+              <ion-radio name="ep1" ng-model="survey.ep1" ng-value="1" class="col text-center" required>1</ion-radio>
+              <ion-radio name="ep1" ng-model="survey.ep1" ng-value="2" class="col text-center">2</ion-radio>
+              <ion-radio name="ep1" ng-model="survey.ep1" ng-value="3" class="col text-center">3</ion-radio>
+              <ion-radio name="ep1" ng-model="survey.ep1" ng-value="4" class="col text-center">4</ion-radio>
+              <ion-radio name="ep1" ng-model="survey.ep1" ng-value="5" class="col text-center">5</ion-radio>
+            </div>
+      </div>
+    </ion-list>
+    
+    <ng-include src="'templates/seccionalertPart.html'" scope="" onload=""></ng-include>
+     <button id="capituloIdentificaciN-button265" class="button button-positive  button-block icon-right ion-android-arrow-forward" type='submit' ng-disabled="form.$invalid">Siguiente</button>
+ </form>
+  </ion-content>
+</ion-view>

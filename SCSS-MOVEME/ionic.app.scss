@@ -1,0 +1,16 @@
+$ionicons-font-path: "../lib/ionic/fonts" !default;
+@import "../www/lib/ionic/scss";
+.wrapping-list .item-content, .wrapping-list .item {
+	overflow: initial;
+	white-space: initial;
+}
+
+.text-center {
+	vertical-align: middle;
+	text-align: center;
+}
+
+ion-view,.pane,.view {
+	background-color: #EEEEEE;
+}
+

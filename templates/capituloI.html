@@ -1,0 +1,44 @@
+<ion-view title="Capitulo I" id="page5">
+  <ion-content padding="false" class="has-header">
+    <form name="form" class="form-horizontal" ng-submit="submitForm('capituloII')" novalidate>
+      <h3 id="capituloI-heading5" style="color:#000000;text-align:center;">CAPITULO I. CARACTERISTICAS SOCIODEMOGRAFIAS DEL INFORMANTE (CS)</h3>
+      <ion-list id="capituloI-list8">
+        <ion-item class="item-divider" id="capituloI-list-item-divider5"> CS1. Género</ion-item>
+        <ion-radio id="capituloI-radio14" name="cs1" ng-value="1" ng-model="survey.cs1" required>1. Hombre</ion-radio>
+        <ion-radio id="capituloI-radio13" name="cs1" ng-value="2" ng-model="survey.cs1">2. Mujer</ion-radio>
+        <ion-item class="item-divider item-text-wrap" id="capituloI-list-item-divider6"> CS2. Edad. ¿Cuántos años cumplidos tiene Ud.?</ion-item>
+        <label class="item item-input" id="capituloI-input24" name="cs2">
+          <span class="input-label">Años cumplidos: </span>
+          <input type="number" placeholder="" ng-model="survey.cs2">
+        </label>
+        <ion-item class="item-divider item-text-wrap" id="capituloI-list-item-divider11"> CS3. ¿Cuál es su parentesco con el jefe o jefa de este hogar?</ion-item>
+        <ion-radio id="capituloI-radio15" name="cs3" ng-value="1" ng-model="survey.cs3" required>1. Jefe(a) de hogar</ion-radio>
+        <ion-radio id="capituloI-radio16" name="cs3" ng-value="2" ng-model="survey.cs3" class="item-text-wrap">2. Pareja, esposo(a), cónyuge, compañero(a)</ion-radio>
+        <ion-radio id="capituloI-radio17" name="cs3" ng-value="3" ng-model="survey.cs3">3. Hijo(a), hijastro(a)</ion-radio>
+        <ion-radio id="capituloI-radio18" name="cs3" ng-value="4" ng-model="survey.cs3">4. Nieto(a)</ion-radio>
+        <ion-radio id="capituloI-radio19" name="cs3" ng-value="5" ng-model="survey.cs3">5. Otro pariente</ion-radio>
+        <ion-radio id="capituloI-radio22" name="cs3" ng-value="6" ng-model="survey.cs3">6. Otro no pariente</ion-radio>
+
+
+        <ion-item class="item-divider item-text-wrap" id="capituloI-list-item-divider12"> CS4. ¿Cuál es el nivel educativo más alto alcanzado por Ud.?</ion-item>
+        <ion-radio id="capituloI-radio23" name="cs4" ng-value="1" ng-model="survey.cs4" required>1. Ninguno</ion-radio>
+        <ion-radio id="capituloI-radio24" name="cs4" ng-value="2" ng-models="survey.cs4">2. Preescolar</ion-radio>
+        <ion-radio id="capituloI-radio25" name="cs4" ng-value="3" ng-model="survey.cs4">3. Básica primaria (1o a 5o)</ion-radio>
+        <ion-radio id="capituloI-radio26" name="cs4" ng-value="4" ng-model="survey.cs4">4. Básica secundaria (6o a 9o)</ion-radio>
+        <ion-radio id="capituloI-radio27" name="cs4" ng-value="5" ng-model="survey.cs4" class="item-text-wrap">5. Media (10o a 13o) / Técnica</ion-radio>
+        <ion-radio id="capituloI-radio28" name="cs4" ng-value="6" ng-model="survey.cs4">6. Superior o Universitaria </ion-radio>
+        <ion-radio id="capituloI-radio29" name="cs4" ng-value="9" ng-model="survey.cs4">9. No Sabe</ion-radio>
+
+        <ion-item class="item-divider item-text-wrap" id="capituloI-list-item-divider13"> CS5. ¿En qué actividad ocupó la mayor parte del tiempo durante la semana pasada?</ion-item>
+        <ion-radio id="capituloI-radio30" name="cs5" ng-value="1" ng-model="survey.cs5" required>1. Trabajar</ion-radio>
+        <ion-radio id="capituloI-radio31" name="cs5" ng-value="2" ng-model="survey.cs5">2. Buscar Trabajo</ion-radio>
+        <ion-radio id="capituloI-radio32" name="cs5" ng-value="3" ng-model="survey.cs5">3. Estudiar</ion-radio>
+        <ion-radio id="capituloI-radio33" name="cs5" ng-value="4" ng-model="survey.cs5">4. Oficios del hogar</ion-radio>
+        <ion-radio id="capituloI-radio34" name="cs5" ng-value="5" ng-model="survey.cs5">5. Incapacitado permanente</ion-radio>
+        <ion-radio id="capituloI-radio35" name="cs5" ng-value="6" ng-model="survey.cs5" class="item-text-wrap">6. Ni estudia, ni trabaja, ni busca trabajo ni hace oficios de hogar (NINIS)</ion-radio>
+      </ion-list>
+      <ng-include src="'templates/seccionalertPart.html'" scope="" onload=""></ng-include>
+      <button id="capituloI-button47" class="button button-positive  button-block icon-right ion-android-arrow-forward" type='submit' ng-disabled="form.$invalid">Siguiente</button>
+    </form>
+  </ion-content>
+</ion-view>

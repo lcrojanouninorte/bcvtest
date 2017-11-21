@@ -1,0 +1,110 @@
+
+<ion-view title="Supervisar Encuesta " id="page4">
+  <ion-content padding="true" class="has-header">
+ 
+<h3>Ecuesta IDM: {{username}}_{{survey.IDM}}</h3>
+    <form name="form" class="form-horizontal"  ng-submit='submitForm("dashboard")' >
+<!--supervisores -->
+    <div class="spacer" style="height: 40px;"></div>
+    <ion-list id="fILTROS-list80" ng-hide="!isAdmin()">
+      <ion-item class="item-divider" id="fILTROS-list-item-divider143" > <h2 class="balanced">Area para Supervisores</h2>DATOS DEL ENCUESTADOR / SUPERVISOR / COORDINADOR</ion-item>
+      <div id="fILTROS-form173" class="list row">
+        <label class="item item-input col" id="fILTROS-input106" name="encuestador:">
+          <span class="input-label">Encuestador:</span>
+          <input ng-model="survey.encuestador" type="text" placeholder="encuestador"  name="encuestador:">
+        </label>
+        <label class="item item-input col" id="fILTROS-input107" name="cedulaEncuestador" >
+          <span class="input-label">C.C.:</span>
+          <input ng-model="survey.cencuestador" type="number" placeholder="C.C.:" name="cedulaEncuestador">
+        </label>
+      </div>
+      <div id="fILTROS-form174" class="list row">
+        <label class="item item-input col" id="fILTROS-input108" name="supervisor" >
+          <span class="input-label">Supervisor:</span>
+          <input  ng-model="survey.supervisor" type="text" placeholder="Supervisor:" required>
+        </label>
+        <label class="item item-input col" id="fILTROS-input109" name="cedulaSupervisor" >
+          <span class="input-label">C.C.:</span>
+          <input ng-model="survey.csupervisor" type="number" placeholder="C.C.:" required>
+        </label>
+      </div>
+      <div id="fILTROS-form175" class="list row">
+        <label class="item item-input col" id="fILTROS-input110" name="coordinador">
+          <span class="input-label">Coordinador:</span>
+          <input ng-model="survey.coordinador" type="text" placeholder="Coordinador:" name="coordinador">
+        </label>
+        <label class="item item-input col" id="fILTROS-input111" name="cedulaCoordinador">
+          <span class="input-label">C.C.:</span>
+          <input  ng-model="survey.ccoordinador" type="number" placeholder="C.C.:" name="cedulaCoordinador">
+        </label>
+      </div>
+      <label class="item item-input" id="fILTROS-input113" name="frevision">
+        <span class="input-label">Fecha de Revisión: </span>
+        <input ng-model="survey.frevision" type="text" placeholder=""  name="frevision">
+      </label>
+      <label class="item item-input" id="fILTROS-input112" name="fsupervision">
+        <span class="input-label">Fecha de Supervisión: </span>
+        <input ng-model="survey.fsupervision" type="text" placeholder="" name="fsupervision">
+      </label>
+      <ion-item class="item-divider" id="fILTROS-list-item-divider146"> Revisor de Critica</ion-item>
+      <label class="item item-input" id="fILTROS-input114" name="rnombre">
+        <span class="input-label">Nombre:</span>
+        <input  ng-model="survey.revisor" type="text" placeholder="" name="rnombre" >
+      </label>
+      <label class="item item-input" id="fILTROS-input115" name="rcc">
+        <span   class="input-label" name="rcc">C.C.:</span>
+        <input ng-model="survey.crevisor" type="text" placeholder="">
+      </label>
+ 
+     
+      <ion-item class="item-divider" id="fILTROS-list-item-divider145"> Tipo de Supervisión:</ion-item>
+      <ion-radio name="tsupervision" ng-value="1" ng-model="survey.tsupervision" id="fILTROS-radio292" required>1. Presencial</ion-radio>
+      <ion-radio name="tsupervision" ng-value="2" ng-model="survey.tsupervision" id="fILTROS-radio293">2. Directa Personal</ion-radio>
+      <ion-radio name="tsupervision" ng-value="3" ng-model="survey.tsupervision" id="fILTROS-radio294">3. Directa Tel.</ion-radio>
+      <ion-radio name="tsupervision" ng-value="4" ng-model="survey.tsupervision" id="fILTROS-radio295">4. No supervisada</ion-radio>
+      
+      <ion-item class="item-divider" id="fILTROS-list-item-divider145ww"> Estado:</ion-item>
+         
+          <ion-checkbox ng-model="survey.revisada" id="fILTROS-radio289" name="revisada">Revisada </ion-checkbox>
+          <ion-checkbox ng-model="survey.tabulada" id="fILTROS-radio290" name="tabulada">Tabulada </ion-checkbox>
+          <ion-checkbox ng-model="survey.revfinal" id="fILTROS-radio291" name="revfinal">Rev. Final</ion-checkbox>
+
+        <ion-item class="item-divider" id="fILTROS-list-item-divider147"> Verificador</ion-item>
+        <div class="item item-body" id="fILTROS-list-item-container181">
+          <div id="fILTROS-form178" class="list row">
+            <div id="fILTROS-markdown508" class="show-list-numbers-and-dots col col-center">
+              <p style="margin-top:0px;color:#000000;">Encuesta verificada</p>
+            </div>
+            <ion-radio id="fILTROS-radio296" ng-value="1" ng-model="survey.verificada" name="verificada" class="col" required>1. Sí</ion-radio>
+            <ion-radio id="fILTROS-radio297" ng-value="2" ng-model="survey.verificada" name="verificada" class="col">2. No</ion-radio>
+          </div>
+        </div>
+        <label class="item item-input" id="fILTROS-input116" name="nverificador">
+          <span class="input-label">Nombre:</span>
+          <input ng-model="survey.nverificador" type="text" placeholder="">
+        </label>
+        <label class="item item-input" id="fILTROS-input117" name="cverificador">
+          <span class="input-label">C.C.</span>
+          <input ng-model="survey.cverificador" type="text" placeholder="">
+        </label>
+        <label class="item item-input" id="fILTROS-input118" name="fverificacion">
+          <span class="input-label">Fecha Verificación: </span>
+          <input ng-model="survey.fverificacion" ng-class="fverificacion" type="text" placeholder="">
+        </label>
+        <ion-item class="item-divider" id="fILTROS-list-item-divider148"> RESULTADO</ion-item>
+        <ion-radio id="fILTROS-radio298" ng-model="survey.resultadov" ng-value="1" name="resultado" required>1. Anulado</ion-radio>
+        <ion-radio id="fILTROS-radio299" ng-model="survey.resultadov" ng-value="2" name="resultado">2. Observado</ion-radio>
+        <ion-radio id="fILTROS-radio300" ng-model="survey.resultadov" ng-value="3" name="resultado">3. Efectivo</ion-radio>
+        <ion-radio id="fILTROS-radio301" ng-model="survey.resultadov" ng-value="4" name="resultado">4. No contactado</ion-radio>
+        <ion-radio id="fILTROS-radio302" ng-model="survey.resultadov" ng-value="5" name="resultado">5. No colabora</ion-radio>
+        <ion-item class="item-divider" id="fILTROS-list-item-divider149"> TIPO VERIFICACIÓN</ion-item>
+        <ion-radio id="fILTROS-radio303" ng-model="survey.tverificacion" ng-value="1" name="tipo_verificacion">1. Presencial</ion-radio>
+        <ion-radio id="fILTROS-radio304" ng-model="survey.tverificacion" ng-value="2" name="tipo_verificacion">2. Telefónica</ion-radio>
+       
+    </ion-list>     
+
+    <ng-include src="'templates/seccionalertPart.html'" scope="" onload=""></ng-include>
+    <button id="fILTROS-button40" class="button button-positive  button-block" type='submit' ng-disabled="form.$invalid">Siguiente</button>
+    </form>
+  </ion-content>
+</ion-view>

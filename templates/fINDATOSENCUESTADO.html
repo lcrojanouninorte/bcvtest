@@ -1,0 +1,50 @@
+<ion-view title="FIN - DATOS ENCUESTADO" id="page31">
+  <ion-content padding="true" class="has-header">
+    <form name="form" class="form-horizontal"  ng-submit="submitForm('dashboard')" novalidate>
+ 
+    <h3 id="fINDATOSENCUESTADO-heading30" style="color:#000000;text-align:center;">¡MUCHAS GRACIAS POR SU COLABORACIÓN! </h3>
+    <h3 id="fINDATOSENCUESTADO-heading31" style="color:#000000;text-align:center;"> (ENC: NO OLVIDE REGISTRAR LA INFORMACIÓN DE ENCUESTADO)</h3>
+    <ion-list id="fINDATOSENCUESTADO-list54">
+      <label class="item item-input" id="fINDATOSENCUESTADO-input77" name="hfinal">
+        <span class="input-label">Hora Finalización </span>
+        <input ng-model="survey.hfinal" type="text" placeholder="" ng-disabled="true">
+      </label>
+      <ion-item class="item-divider" id="fINDATOSENCUESTADO-list-item-divider126"> DATOS DEL ENCUESTADO <b>(ENC: SOLICITARLOS AL FINAL DE LA ENTREVISTA)</b></ion-item>
+      <label class="item item-input" id="fINDATOSENCUESTADO-input70" name="enombre">
+        <span class="input-label">Nombre:</span>
+        <input ng-model="survey.enombre" type="text" placeholder="" required>
+      </label>
+      <label class="item item-input" id="fINDATOSENCUESTADO-input72" name="edireccion">
+        <span class="input-label">Dirección: </span>
+        <input ng-model="survey.edireccion" type="text" placeholder="">
+      </label>
+      <label class="item item-input" id="fINDATOSENCUESTADO-input73" name="email">
+        <span class="input-label">E-Mail:</span>
+        <input ng-model="survey.email" type="text" placeholder="email">
+      </label>
+      <label class="item item-input" id="fINDATOSENCUESTADO-input71" name="etelefono">
+        <span class="input-label">Teléfono:</span>
+        <input ng-model="survey.etelefono" type="text" placeholder="">
+      </label>
+      <label class="item item-input" id="fINDATOSENCUESTADO-input75" name="ebarrio">
+        <span class="input-label">Barrio:</span>
+        <input ng-model="survey.ebarrio" type="text" placeholder="">
+      </label>
+      <label class="item item-input" id="fINDATOSENCUESTADO-input74" name="ecelular">
+        <span class="input-label">Celular:</span>
+        <input  ng-model="survey.ecelular" type="text" placeholder="">
+      </label>
+    </ion-list>
+    <ion-list id="fINDATOSENCUESTADO-list65">
+      <ion-item class="item-divider" id="fINDATOSENCUESTADO-list-item-divider127"> OBSERVACIONES</ion-item>
+    </ion-list>
+    <div id="fINDATOSENCUESTADO-form160" class="list">
+      <label class="item item-input" id="fINDATOSENCUESTADO-textarea6">
+        <span class="input-label"></span><textarea ng-model="survey.observaciones" placeholder="OBSERVACIONES"></textarea></label>
+    </div>
+    <button ng-show="isAdmin()" ui-sref="capSupervicion({id: survey._id})"  class="button butston-balanced button-block icon-right ion-android-arrow-forward">Supervisar</button>
+    <button ng-show="!isAdmin()" id="capituloIdentificaciN-button265" class="button button-positive  button-block icon-right ion-android-arrow-forward" type='submit' ng-disabled="form.$invalid">Finalizar</button>
+  
+     </form>
+  </ion-content>
+</ion-view>

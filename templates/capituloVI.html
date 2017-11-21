@@ -1,0 +1,186 @@
+<ion-view title="Capitulo VI" id="page14">
+  <ion-content padding="true" class="has-header">
+    <form name="form" class="form-horizontal" ng-submit="submitForm('capituloVII')" novalidate>
+      <h3 id="capituloVI-heading11" style="color:#000000;text-align:center;">CAPÍTULO VI. EDUCACIÓN (ED)</h3>
+      <ion-list id="capituloVI-list23">
+        <ion-item class="item-divider item-text-wrap" id="capituloVI-list-item-divider28"> <b>ED25.</b> Pensando en los niños de este hogar entre 0 y 5 años… <b>(ENC: LEA)</b> </ion-item>
+        
+        <label class="item item-input  " id="capituloIdentificaciN-input80" name="IDM">
+          <span class="input-label item-text-wrap col col-80">1. ¿cuántos asisten a un hogar comunitario, guardería, preescolar o jardín público?</span>
+          <input placeholder="0..99" type="number" id="capituloVI-radio103" name="ed251"  class="col col-20"  ng-model="survey.ed251"  required>
+        </label>
+        <label class="item item-input" id="capituloIdentificaciN-input80" name="IDM">
+          <span class="input-label item-text-wrap col col-80">2. ¿cuántos asisten a una guardería, preescolar o jardín privado?</span>
+          <input placeholder="0..99" type="number" id="capituloVI-radio104" name="ed252" class="item-text-wrap" ng-model="survey.ed252"   required>
+        </label>
+        <label class="item item-input" id="capituloIdentificaciN-input80" name="IDM">
+          <span class="input-label item-text-wrap col col-80">3. ¿cuántos permanecen en casa, solo o con menores? <b>→ PROG/ENC: PASE A ED3</b></span>
+          <input placeholder="0..99" type="number" id="capituloVI-radio105" name="ed253" class="item-text-wrap" ng-model="survey.ed253" required>
+        </label>
+        <label class="item item-input" id="capituloIdentificaciN-input80" name="IDM">
+          <span class="input-label item-text-wrap col col-80">4. ¿cuántos permanecen en casa con un adulto? <b>→ PROG/ENC: PASE A ED3</b></span>
+          <input placeholder="0..99" type="number" id="capituloVI-radio106" name="ed254" class="item-text-wrap" ng-model="survey.ed254"   required>
+        </label>
+        <label class="item item-input" id="capituloIdentificaciN-input80" name="IDM">
+          <span class="input-label item-text-wrap col col-80">5. ¿cuántos permanecen fuera de casa al cuidado de vecinos, amigos o familiares? <b>→ PROG/ENC: PASE A ED3</b></span>
+          <input placeholder="0..99" type="number" id="capituloVI-radio106" name="ed255" class="item-text-wrap" ng-model="survey.ed255"   required>
+        </label>
+        <label class="item item-input" id="capituloIdentificaciN-input80" name="IDM">
+          <span class="input-label item-text-wrap col col-80">6. Otro cuál?</span>
+          <input placeholder=" " type="text" id="capituloVI-radio106" name="ed56" class="item-text-wrap" ng-model="survey.ed256" >
+        </label>
+        <ion-checkbox   id="capituloVI-radio107" name="ed1" class="item-text-wrap" ng-model="ed2590copy"    ng-click="survey.ed2590 = ed2590copy?1:2;" > 90. No hay niños menores de seis años <b>→ PROG/ENC: PASE A ED3</b></ion-checkbox>
+ 
+        <div ng-show="(survey.ed251>0 || survey.ed252>0) ">
+          <div ng-hide="true"> {{survey.ed5a = !(survey.ed251>0 || survey.ed252>0)? 90:survey.ed5a; }}</div>
+
+          
+
+
+          <ion-item class="item-divider item-text-wrap" id="capituloVI-list-item-divider30">
+            <b>ED5A (NUEVA).</b> Pensando en la atención a la primera infancia (niños entre los cero y cinco años) en la guardería, preescolar, jardín público o privado u hogar comunitario ¿qué tan satisfecho está usted con dicha atención en una escala donde uno es muy insatisfecho y cinco muy satisfecho?</ion-item>
+          <div class="item item-body col" id="capituloVI-list-item-container64">
+            <div id="capituloVI-container39" class="row">
+              <div id="capituloVI-markdown241" style="text-align:center;" class="show-list-numbers-and-dots col">
+                <p style="margin-top:0px;color:#000000;font-size:9px;">Muy insatisfecho</p>
+              </div>
+              <div id="capituloVI-markdown246" style="text-align:center;" class="show-list-numbers-and-dots col">
+                <p style="margin-top:0px;color:#000000;font-size:9px;">Algo satisfecho</p>
+              </div>
+              <div id="capituloVI-markdown245" style="text-align:center;" class="show-list-numbers-and-dots col">
+                <p style="margin-top:0px;color:#000000;font-size:9px;">Ni satisfecho ni insatisfecho</p>
+              </div>
+              <div id="capituloVI-markdown242" style="text-align:center;" class="show-list-numbers-and-dots col">
+                <p style="margin-top:0px;color:#000000;font-size:9px;">Algo insatisfecho</p>
+              </div>
+              <div id="capituloVI-markdown247" style="text-align:center;" class="show-list-numbers-and-dots col">
+                <p style="margin-top:0px;color:#000000;font-size:9px;">Muy satisfecho</p>
+              </div>
+            </div>
+            <div class="list row">
+              
+              <div  ng-if="(survey.ed251>0 || survey.ed252>0) && (survey.ed5a == 90 || !(survey.ed5a>0)) ">
+                {{form.$invalid=true; }}
+
+              </div>
+              <ion-radio name="ed5a" ng-model="survey.ed5a" ng-value="1" class="col text-center" 
+              ng-required='(survey.ed251>0 || survey.ed252>0)'
+
+              >1</ion-radio>
+              <ion-radio name="ed5a" ng-model="survey.ed5a" ng-value="2" class="col text-center">2</ion-radio>
+              <ion-radio name="ed5a" ng-model="survey.ed5a" ng-value="3" class="col text-center">3</ion-radio>
+              <ion-radio name="ed5a" ng-model="survey.ed5a" ng-value="4" class="col text-center">4</ion-radio>
+              <ion-radio name="ed5a" ng-model="survey.ed5a" ng-value="5" class="col text-center">5</ion-radio>
+            </div>
+          </div>
+        </div>
+
+        <div>
+         
+        <ion-item class="item-divider item-text-wrap" id="capituloVI-list-item-divider28"> <b>ED3 (NUEVA).</b> Pensando en los niños y jóvenes de este hogar entre 5 y 17 años, excluyendo a los que hayan terminado el grado once de bachillerato, actualmente ¿cuántos asisten a un establecimiento educativo privado, cuántos a uno público o cuántos no asisten a ningún establecimiento educativo? </ion-item>
+         <label class="item item-input  " id="capituloIdentificaciN-input80" name="IDM">
+          <span class="input-label item-text-wrap col col-80">1. Número de niños/jóvenes en establecimiento educativo privado</span>
+          <input placeholder="0..99" type="number" id="capituloVI-radio103" name="ed31"  class="col col-20"  ng-model="survey.ed31" v required>
+        </label>
+        <label class="item item-input" id="capituloIdentificaciN-input80" name="IDM">
+          <span class="input-label item-text-wrap col col-80">2. Número de niños/jóvenes en establecimiento educativo público</span>
+          <input placeholder="0..99" type="number" id="capituloVI-radio104" name="ed32" class="item-text-wrap" ng-model="survey.ed32" v required>
+        </label>
+        <label class="item item-input" id="capituloIdentificaciN-input80" name="IDM">
+          <span class="input-label item-text-wrap col col-80">3. Número de niños/jóvenes que NO asisten a ningún establecimiento <b>-> (PROG: Pase a ED8)</b></span>
+          <input placeholder="0..99" type="number" id="capituloVI-radio105" name="ed33" class="item-text-wrap" ng-model="survey.ed33"  required>
+        </label>
+        
+        <ion-checkbox   id="capituloVI-radio107" name="ed1" class="item-text-wrap" ng-model="ed390copy"    ng-click="survey.ed390 = ed390copy?1:2;"> 90. No hay niños/jóvenes entre los 5 y 17 años <b>-> (PROG: Pase a ED8)</b></ion-checkbox>
+         </div>
+
+           
+
+        <div ng-hide="true"> 
+              {{survey.ed4 = !( survey.ed31 > 0 || survey.ed32 >0)?99:survey.ed4; }}
+        </div>
+            
+        <div ng-show="( survey.ed31 > 0 || survey.ed32 >0)"  >
+           
+          <ion-item class="item-divider item-text-wrap" id="capituloVI-list-item-divider30">
+            <b>ED4. (ENC: ENTREGUE TARJETA SATISFACCIÓN)</b> ¿Qué tan satisfecho(a) está usted en general con la educación que reciben los niños y jóvenes de este hogar que asisten a un establecimiento educativo, usando estas opciones? Puede utilizar cualquier número de la escala. <b>(ENC: REGISTRE EN CUADRO SIGUIENTE A PREGUNTA ED8) RU</b></ion-item>
+            
+
+          <div class="item item-body col" id="capituloVI-list-item-container64">
+            <div id="capituloVI-container39" class="row">
+              <div id="capituloVI-markdown241" style="text-align:center;" class="show-list-numbers-and-dots col">
+                <p style="margin-top:0px;color:#000000;font-size:9px;">Muy insatisfecho</p>
+              </div>
+              <div id="capituloVI-markdown246" style="text-align:center;" class="show-list-numbers-and-dots col">
+                <p style="margin-top:0px;color:#000000;font-size:9px;">Algo satisfecho</p>
+              </div>
+              <div id="capituloVI-markdown245" style="text-align:center;" class="show-list-numbers-and-dots col">
+                <p style="margin-top:0px;color:#000000;font-size:9px;">Ni satisfecho ni insatisfecho</p>
+              </div>
+              <div id="capituloVI-markdown242" style="text-align:center;" class="show-list-numbers-and-dots col">
+                <p style="margin-top:0px;color:#000000;font-size:9px;">Algo insatisfecho</p>
+              </div>
+              <div id="capituloVI-markdown247" style="text-align:center;" class="show-list-numbers-and-dots col">
+                <p style="margin-top:0px;color:#000000;font-size:9px;">Muy satisfecho</p>
+              </div>
+            </div>
+            <div class="list row">
+              <div ng-hide="true" ng-if="(survey.ed31>0 || survey.ed32>0) && (survey.ed4 == 99 || !(survey.ed4>0))">
+                {{form.$invalid = true;}}
+              </div>
+              <ion-radio name="ed4" ng-model="survey.ed4" ng-value="1" class="col text-center" ng-required='(survey.ed31>0 || survey.ed32>0)'>1</ion-radio>
+              <ion-radio name="ed4" ng-model="survey.ed4" ng-value="2" class="col text-center">2</ion-radio>
+              <ion-radio name="ed4" ng-model="survey.ed4" ng-value="3" class="col text-center">3</ion-radio>
+              <ion-radio name="ed4" ng-model="survey.ed4" ng-value="4" class="col text-center">4</ion-radio>
+              <ion-radio name="ed4" ng-model="survey.ed4" ng-value="5" class="col text-center">5</ion-radio>
+
+
+            </div>
+          </div>
+        </div>
+
+        <ion-item class="item-divider item-text-wrap" id="capituloVI-list-item-divider33">
+          <b>ED8. (ENC: ENTREGUE TARJETA SATISFACCIÓN)</b> ¿Qué tan satisfecho(a) está usted en general con la educación que reciben los jóvenes de este hogar que asisten a un establecimiento de educación técnica, tecnológica, universitaria o superior de su ciudad, usando estas opciones? Puede utilizar cualquier número de la escala. <b>(ENC: SI NO HAY JOVENES O NINGUNO ESTÁ ESTUDIANDO EDUCACIÓN SUPERIOR MARQUE 90) RU</b></ion-item>
+        <div class="item item-body col" id="capituloVI-list-item-container66">
+          <div id="capituloVI-container40" class="row">
+            <div id="capituloVI-markdown248" style="text-align:center;" class=" col">
+              <p style="margin-top:0px;color:#000000;font-size:7px;">Muy insatisfecho</p>
+            </div>
+            <div id="capituloVI-markdown249" style="text-align:center;" class="col">
+              <p style="margin-top:0px;color:#000000;font-size:7px;">Algo satisfecho</p>
+            </div>
+            <div id="capituloVI-markdown250" style="text-align:center;" class=" col">
+              <p style="margin-top:0px;color:#000000;font-size:7px;">Ni satisfecho ni insatisfecho</p>
+            </div>
+            <div id="capituloVI-markdown251" style="text-align:center;" class=" col">
+              <p style="margin-top:0px;color:#000000;font-size:7px;">Algo insatisfecho</p>
+            </div>
+            <div id="capituloVI-markdown252" style="text-align:center;" class=" col">
+              <p style="margin-top:0px;color:#000000;font-size:7px;">Muy satisfecho</p>
+            </div>
+            <div id="capituloVI-markdown252" style="text-align:center;" class=" col">
+              <p style="margin-top:0px;color:#000000;font-size:7px;">Hay jóvenes, pero no asisten </p>
+            </div>
+            <div id="capituloVI-markdown252" style="text-align:center;" class=" col">
+              <p style="margin-top:0px;color:#000000;font-size:7px;">No Aplica </p>
+            </div>
+          </div>
+          <div id="capituloVI-button-bar11" class="button-bar">
+            <div class="list row">
+              <ion-radio name="ed8" ng-model="survey.ed8" ng-value="1" class="col text-center" required>1</ion-radio>
+              <ion-radio name="ed8" ng-model="survey.ed8" ng-value="2" class="col text-center">2</ion-radio>
+              <ion-radio name="ed8" ng-model="survey.ed8" ng-value="3" class="col text-center">3</ion-radio>
+              <ion-radio name="ed8" ng-model="survey.ed8" ng-value="4" class="col text-center">4</ion-radio>
+              <ion-radio name="ed8" ng-model="survey.ed8" ng-value="5" class="col text-center">5</ion-radio>
+              <ion-radio style="font-size:11px;" name="ed8" ng-model="survey.ed8" ng-value="80" class="col text-center">80</ion-radio>
+              <ion-radio style="font-size:11px;" name="ed8" ng-model="survey.ed8" ng-value="90" class="col text-center">90</ion-radio>
+            </div>
+          </div>
+        </div>
+      </ion-list>
+      <ng-include src="'templates/seccionalertPart.html'" scope="" onload=""></ng-include>
+      <button class="button button-positive  button-block icon-right ion-android-arrow-forward" type='submit' ng-disabled="
+      ">Siguiente</button>
+    </form>
+  </ion-content>
+</ion-view>

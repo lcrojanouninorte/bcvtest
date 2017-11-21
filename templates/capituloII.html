@@ -1,0 +1,47 @@
+
+
+<ion-view title="Capitulo II" id="page10">
+  <ion-content padding="true" class="has-header">
+  <form name="form" class="form-horizontal"  ng-submit="submitForm('capituloIII')" novalidate>
+
+    <h3 id="capituloII-heading7" style="color:#000000;text-align:center;">CAPÍTULO II. ASPECTOS GENERALES - CLIMA DE OPINIÓN (AG)</h3>
+    
+    <ion-list id="capituloII-list19">
+      <ion-item class="item-divider item-text-wrap" id="capituloII-list-item-divider14"> AG1. Ahora quisiera saber si en su opinión las cosas <b>(Barranquilla/ Soledad/ Puerto Colombia)</b> en general, ¿van por buen camino o por mal camino? RU</ion-item>
+      <ion-radio id="capituloII-radio37" name="ag1" ng-model="survey.ag1" ng-value="1" required>1. Buen Camino</ion-radio>
+      <ion-radio id="capituloII-radio38" name="ag1" ng-model="survey.ag1" ng-value="2" required>2. Mal camino</ion-radio>
+      
+      <ion-item class="item-divider item-text-wrap" id="capituloII-list-item-divider15"><b>AG2. (ENC: ENTREGUE TARJETA AG2)</b>  Usted personalmente, ¿qué tan orgulloso(a) se siente de <b>(Barranquilla/ Soledad/ Puerto Colombia)</b> ahora, en una escala de 1 a 5, donde 1 es nada orgulloso y 5 es muy orgulloso? Puede utilizar cualquier número de la escala. <b>(ENC: PIDA UNA CALIFICACIÓN) RU</b> </ion-item>
+      <div class="item item-body" id="capituloII-list-item-container54">
+        <div id="capituloII-container35" class="row">
+          <div id="capituloII-markdown195" style="text-align:center;" class="show-list-numbers-and-dots col">
+            <p style="color:#000000;font-size:10px;">Nada orgulloso</p>
+          </div>
+          <div id="capituloII-markdown196" style="text-align:center;" class="show-list-numbers-and-dots col">
+            <p style="color:#000000;font-size:10px;">Poco orgulloso</p>
+          </div>
+          <div id="capituloII-markdown197" style="text-align:center;" class="show-list-numbers-and-dots col">
+            <p style="color:#000000;font-size:10px;">Ni orgulloso ni no orgulloso</p>
+          </div>
+          <div id="capituloII-markdown198" style="text-align:center;" class="show-list-numbers-and-dots col">
+            <p style="color:#000000;font-size:10px;">Orgulloso</p>
+          </div>
+          <div id="capituloII-markdown221" style="text-align:center;" class="show-list-numbers-and-dots col">
+            <p style="color:#000000;font-size:10px;">Muy Orgulloso</p>
+          </div>
+        </div>
+        <div id="capituloII-form99" class="list row">
+          <ion-radio id="capituloII-radio147" ng-value="1" ng-model="survey.ag2" class="col text-center" required>1</ion-radio>
+          <ion-radio id="capituloII-radio146" ng-value="2" ng-model="survey.ag2" class="col text-center">2</ion-radio>
+          <ion-radio id="capituloII-radio145" ng-value="3" ng-model="survey.ag2" class="col text-center">3</ion-radio>
+          <ion-radio id="capituloII-radio143" ng-value="4" ng-model="survey.ag2" class="col text-center">4</ion-radio>
+          <ion-radio id="capituloII-radio144" ng-value="5" ng-model="survey.ag2" class="col text-center">5</ion-radio>
+        </div>
+      </div>
+    </ion-list>
+     <ng-include src="'templates/seccionalertPart.html'" scope="" onload=""></ng-include>
+      <button id="capituloIdentificaciN-button265" class="button button-positive  button-block icon-right ion-android-arrow-forward" type='submit' ng-disabled="form.$invalid">Siguiente</button>
+    </form>
+    
+  </ion-content>
+</ion-view>

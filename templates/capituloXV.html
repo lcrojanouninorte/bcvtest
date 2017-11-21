@@ -1,0 +1,795 @@
+
+<ion-view title="Capitulo XV" id="page22">
+  <ion-content padding="true" class="has-header">
+    <form name="form" class="form-horizontal"  ng-submit="submitForm('capituloXVI')" novalidate>
+
+    <h3 id="capituloXV-heading20" style="color:#000000;text-align:center;">CAPITULO XV. MOVILIDAD VIAL (MV) </h3>
+    <ion-list id="capituloXV-list24">
+      <ion-item class="item-divider item-text-wrap" id="capituloXV-list-item-divider18"> MV1. Actualmente Usted _____? (ENC: LEA) RU</ion-item>
+
+      <ion-item class="item-divider item-text-wrap" id="capituloXV-list-item-divider109">    MV1A. ENC: APLIQUE SEGÚN CORRESPONDA, DE ACUERDO CON LA RESPUESTA A LA PREGUNTA MV1 Y específicamente Ud. _____? (ENC: LEA) RU </ion-item>
+      <ion-radio id="capituloXV-radio120" ng-model="survey.mv1" ng-value="1" name="mv1" required>1. Trabaja fuera de casa</ion-radio>
+      <ion-radio id="capituloXV-radio121" ng-model="survey.mv1" ng-value="3" name="mv1">3. Trabaja y estudia</ion-radio>
+      <ion-radio id="capituloXV-radio134" ng-model="survey.mv1" ng-value="4" name="mv1">4. Trabaja en casa</ion-radio>
+      
+      <div ng-show="survey.mv1==1 || survey.mv1==3 || survey.mv1==4 "  class="item item-body hide-mv1a" id="capituloXV-list-item-container156">
+        <div id="capituloXV-markdown470" style="text-align:center;" class="show-list-numbers-and-dots">
+          <p style="margin-top:0px;color:#000000;">MV1A Pregunte según corresponda</p>
+
+          <p style="color:#000000;">
+            <strong>Trabaja como…</strong>
+          </p>
+
+          <p style="color:#000000;">Señale respuesta a MV1A</p>
+        </div>
+        <div id="capituloXV-form116" class="list">
+          <ion-radio id="capituloXV-radio124" ng-model="survey.mv1a" ng-value="1" name="mv1a" ng-required="survey.mv1==1 || survey.mv1==3 || survey.mv1==4">01 Empleado</ion-radio>
+          <ion-radio id="capituloXV-radio125" ng-model="survey.mv1a" ng-value="2" name="mv1a" class="item-text-wrap">02 Empleador (es patrón)</ion-radio>
+          <ion-radio id="capituloXV-radio126" ng-model="survey.mv1a" ng-value="3" name="mv1a">03 Por cuenta propia</ion-radio>
+        </div>
+      </div>
+      <ion-radio ng-click="survey.mv1a=''; survey.mv1e=''" id="capituloXV-radio251" ng-model="survey.mv1" ng-value="2" name="mv1">2. Estudia</ion-radio>
+      <ion-radio id="capituloXV-radio158" ng-model="survey.mv1" ng-value="5" name="mv1">5. Está desempleado(a) </ion-radio>
+      <div  ng-show="survey.mv1==5 "  class="item item-body hide-mv1e" id="capituloXV-list-item-container174">
+        <div id="capituloXV-markdown472" style="text-align:center;" class="show-list-numbers-and-dots">
+          <p style="margin-top:0px;color:#000000;">MV1A Pregunte según corresponda</p>
+
+          <p style="color:#000000;">
+            <strong>¿Está buscando trabajo, o no está buscando trabajo?</strong>
+          </p>
+
+          <p style="color:#000000;">Señale respuesta a MV1A</p>
+        </div>
+        <div id="capituloXV-form120" class="list">
+          <ion-radio  id="capituloXV-radio155" ng-model="survey.mv1e" ng-value="1" name="mv1e" ng-required="survey.mv1==5">01 Está buscando trabajo</ion-radio>
+          <ion-radio id="capituloXV-radio156" ng-model="survey.mv1e" ng-value="2" name="mv1e">02 No está buscando trabajo</ion-radio>
+        </div>
+      </div>
+      <ion-radio ng-click="survey.mv1a=''; survey.mv1e=''" id="capituloXV-radio159" name="mv1" ng-model="survey.mv1" ng-value="6" class="col -col-center  item-text-wrap">6. Es responsable de la casa </ion-radio>
+      <ion-radio ng-click="survey.mv1a=''; survey.mv1e=''" id="capituloXV-radio163" name="mv1" ng-model="survey.mv1" ng-value="7" class="col -col-center  item-text-wrap">7. Esta jubilado(a)/ pensionado(a) </ion-radio>
+    </ion-list>
+
+
+    <ion-list id="capituloXV-list34">
+      <ion-item class="item-divider item-text-wrap" id="capituloXV-list-item-divider29"> MV2. Usted percibe que, en general sus trayectos habituales en el último año, ¿toman el mismo tiempo, toman más tiempo, o toman menos tiempo que el año pasado? RU</ion-item>
+      <ion-radio id="capituloXV-radio166" ng-model="survey.mv2" ng-value="1" name="mv2" required>1 Lo mismo</ion-radio>
+      <ion-radio id="capituloXV-radio165" ng-model="survey.mv2" ng-value="2" name="mv2">2 Más tiempo</ion-radio>
+      <ion-radio id="capituloXV-radio164" ng-model="survey.mv2" ng-value="3" name="mv2">3 Menos tiempo</ion-radio>
+
+
+      <ion-item class="item-divider item-text-wrap" id="capituloXV-list-item-divider54"> <b>MV3. (ENC: ENTREGUE TARJETA MV3)</b> ¿Qué medio de transporte usa Usted principalmente para desplazarse en sus actividades habituales? RU</ion-item>
+      <ion-radio ng-click="survey.mv3otro=''" id="capituloXV-radio136" ng-model="survey.mv3" ng-value="1" name="mv3">1 Transmetro</ion-radio>
+      <ion-radio ng-click="survey.mv3otro=''" id="capituloXV-radio137" ng-model="survey.mv3" ng-value="2" name="mv3" class="item-text-wrap">5 Bus/Buseta/Micro/Ejecutivo/Colectivo</ion-radio>
+      <ion-radio ng-click="survey.mv3otro=''" id="capituloXV-radio152" ng-model="survey.mv3" ng-value="3" name="mv3">6 Taxi</ion-radio>
+      <ion-radio ng-click="survey.mv3otro=''" id="capituloXV-radio153" ng-model="survey.mv3" ng-value="4" name="mv3">7 Uber</ion-radio>
+      <ion-radio ng-click="survey.mv3otro=''" id="capituloXV-radio154" ng-model="survey.mv3" ng-value="5" name="mv3">8 Moto</ion-radio>
+      <ion-radio ng-click="survey.mv3otro=''" id="capituloXV-radio160" ng-model="survey.mv3" ng-value="6" name="mv3">9 Bicicleta</ion-radio>
+      <ion-radio ng-click="survey.mv3otro=''" id="capituloXV-radio161" ng-model="survey.mv3" ng-value="7" name="mv3">10 A pie</ion-radio>
+      <ion-radio ng-click="survey.mv3otro=''" id="capituloXV-radio162" ng-model="survey.mv3" ng-value="8" name="mv3">11 Vehículo particular</ion-radio>
+      <ion-radio ng-click="survey.mv3otro=''" id="capituloXV-radio167" ng-model="survey.mv3" ng-value="9" name="mv3" class="item-text-wrap">12 Bus de la empresa/entidad educativa</ion-radio>
+      <ion-radio ng-click="mv3otro=''" id="capituloXV-radio168" ng-model="survey.mv3" ng-value="10" name="mv3" class="item-text-wrap">13 Transporte informal/Pirata (motocarro, mototaxi, bicitaxi y otros.</ion-radio>
+      <label class="item item-input" id="capituloXV-input25" name="mv3">
+        <span class="input-label">89 Otro. ¿Cuál? </span>
+        <input ng-click="survey.mv3=89"  ng-model="survey.mv3otro" ng-value="" type="text" placeholder="________________" ng-required="mv3==89">
+        <ion-radio   ng-value="89" ng-model="survey.mv3" name="mv3" class="item-text-wrap col">Otros.</ion-radio>
+
+      </label>
+
+
+      <ion-item class="item-divider item-text-wrap" id="capituloXV-list-item-divider65"><b> MV4. (ENC: ENTREGUE TARJETA SATISFACCIÓN)</b> Usando estas opciones, ¿qué tan satisfecho(a) está usted con el medio de transporte que utiliza principalmente? Puede utilizar cualquier número de la escala. RU</ion-item>
+      <div class="item item-body" id="capituloXV-list-item-container108">
+        <div id="capituloXV-container31" class="row">
+          <div id="capituloXV-markdown166" style="text-align:center;" class="show-list-numbers-and-dots col">
+            <p style="margin-top:0px;color:#000000;font-size:10px;">Muy insatisfecho</p>
+          </div>
+          <div id="capituloXV-markdown167" style="text-align:center;" class="show-list-numbers-and-dots col">
+            <p style="margin-top:0px;color:#000000;font-size:10px;">Algo insatisfecho</p>
+          </div>
+          <div id="capituloXV-markdown169" style="text-align:center;" class="show-list-numbers-and-dots col">
+            <p style="margin-top:0px;color:#000000;font-size:10px;">Ni satisfecho ni insatisfecho</p>
+          </div>
+          <div id="capituloXV-markdown170" style="text-align:center;" class="show-list-numbers-and-dots col">
+            <p style="margin-top:0px;color:#000000;font-size:10px;">Algo satisfecho</p>
+          </div>
+          <div id="capituloXV-markdown174" style="text-align:center;" class="show-list-numbers-and-dots col">
+            <p style="margin-top:0px;color:#000000;font-size:10px;">Muy satisfecho</p>
+          </div>
+        </div>
+         <div>
+           
+         <div  class="list row">
+              <ion-radio name="mv4" ng-model="survey.mv4" ng-value="1" class="col text-center" required>1</ion-radio>
+              <ion-radio name="mv4" ng-model="survey.mv4" ng-value="2" class="col text-center">2</ion-radio>
+              <ion-radio name="mv4" ng-model="survey.mv4" ng-value="3" class="col text-center">3</ion-radio>
+              <ion-radio name="mv4" ng-model="survey.mv4" ng-value="4" class="col text-center">4</ion-radio>
+              <ion-radio name="mv4" ng-model="survey.mv4" ng-value="5" class="col text-center">5</ion-radio>
+               
+         </div>
+            </div>
+      </div>
+
+
+          <ion-list id="capituloXV-list45">
+      <ion-item class="item-divider item-text-wrap" id="capituloXV-list-item-divider66"> MV26. ¿Es usted usuario del Transmetro? RU</ion-item>
+      <ion-radio id="capituloXV-radio169" ng-value="1" ng-model="survey.mv26" name="MV26" required>1 Sí</ion-radio>
+      <ion-radio id="capituloXV-radio170" ng-value="2" ng-model="survey.mv26" name="MV26">2 No – (ENC: PASE a EP1)</ion-radio>
+    </ion-list>
+
+
+<!--
+      <ion-item class="item-divider item-text-wrap" id="capituloXV-list-item-divider68"> (MV28A). En una escala 1 a 5, siendo 1 muy malo y 5 muy bueno ¿Cómo califica el cumplimiento de normas relacionadas con los límites de velocidad en conductores de…? (ENC: LEA Y ROTE) RU POR OPCIÓN. </ion-item>
+      <div class="item item-body row row-center"
+        id="capituloXV-list-item-container102">
+        <div id="capituloXV-markdown473" style="text-align:center;" class="show-list-numbers-and-dots col">
+          <p style="color:#000000;">
+            <strong>ASPECTOS</strong>
+          </p>
+        </div>
+      </div>
+      <div class="item item-body" id="capituloXV-list-item-container110">
+        <div id="capituloXV-markdown477" class="show-list-numbers-and-dots col">
+          <p style="color:#000000;">1 Conductores de buses de Transmetro</p>
+        </div>
+        <div id="capituloXV-form102" class="list col col-center">
+          <div>
+            
+          <div  class="list row">
+              <ion-radio name="mv28a1" ng-model="survey.mv28a1" ng-value="1" class="col text-center" required>1</ion-radio>
+              <ion-radio name="mv28a1" ng-model="survey.mv28a1" ng-value="2" class="col text-center">2</ion-radio>
+              <ion-radio name="mv28a1" ng-model="survey.mv28a1" ng-value="3" class="col text-center">3</ion-radio>
+              <ion-radio name="mv28a1" ng-model="survey.mv28a1" ng-value="4" class="col text-center">4</ion-radio>
+              <ion-radio name="mv28a1" ng-model="survey.mv28a1" ng-value="5" class="col text-center">5</ion-radio>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="item item-body" id="capituloXV-list-item-container103">
+        <div id="capituloXV-markdown474" class="show-list-numbers-and-dots col">
+          <p style="color:#000000;">2 Conductores de taxis</p>
+        </div>
+        <div id="capituloXV-form98" class="list col">
+          <div>
+            
+          <div  class="list row">
+              <ion-radio name="mv28a2" ng-model="survey.mv28a2" ng-value="1" class="col text-center" required>1</ion-radio>
+              <ion-radio name="mv28a2" ng-model="survey.mv28a2" ng-value="2" class="col text-center">2</ion-radio>
+              <ion-radio name="mv28a2" ng-model="survey.mv28a2" ng-value="3" class="col text-center">3</ion-radio>
+              <ion-radio name="mv28a2" ng-model="survey.mv28a2" ng-value="4" class="col text-center">4</ion-radio>
+              <ion-radio name="mv28a2" ng-model="survey.mv28a2" ng-value="5" class="col text-center">5</ion-radio>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="item item-body" id="capituloXV-list-item-container129">
+        <div id="capituloXV-markdown218" class="show-list-numbers-and-dots col">
+          <p style="color:#000000;">3 Conductores de buses, busetas y colectivos</p>
+        </div>
+        <div id="capituloXV-form74" class="list col">
+         <div>
+           
+         <div  class="list row">
+              <ion-radio name="mv28a3" ng-model="survey.mv28a3" ng-value="1" class="col text-center" required>1</ion-radio>
+              <ion-radio name="mv28a3" ng-model="survey.mv28a3" ng-value="2" class="col text-center">2</ion-radio>
+              <ion-radio name="mv28a3" ng-model="survey.mv28a3" ng-value="3" class="col text-center">3</ion-radio>
+              <ion-radio name="mv28a3" ng-model="survey.mv28a3" ng-value="4" class="col text-center">4</ion-radio>
+              <ion-radio name="mv28a3" ng-model="survey.mv28a3" ng-value="5" class="col text-center">5</ion-radio>
+            </ div>
+         </div>
+        </div>
+      </div>
+    -->
+
+<!--
+      <ion-item class="item-divider item-text-wrap" id="capituloXV-list-item-divider64"> MV13. (ENC: ENTREGUE TARJETA SATISFACCIÓN) En una escala de 1 a 5, donde 1 es muy insatisfecho(a) y 5 es muy satisfecho(a), ¿qué tan insatisfecho(a) o satisfecho(a) está usted con los siguientes aspectos relacionados con el tránsito de (Barranquilla/
+        Soledad/ Puerto Colombia)? Puede utilizar cualquier número de la escala. (ENC: LEA Y ROTE) RU POR OPCIÓN. </ion-item>
+      <div class="item item-body row" id="capituloXV-list-item-container107">
+        <div id="capituloXV-markdown161" style="text-align:center;" class="show-list-numbers-and-dots col">
+          <p style="color:#000000;">
+            <strong>ASPECTOS</strong>
+          </p>
+        </div>
+        <div id="capituloXV-markdown476" style="text-align:center;" class="show-list-numbers-and-dots col">
+          <p style="color:#000000;">
+            <strong>SATISFACCIÓN</strong>
+          </p>
+        </div>
+      </div>
+      <div class="item item-body" id="capituloXV-list-item-container109">
+        <div id="capituloXV-markdown475" class="show-list-numbers-and-dots col">
+          <p style="color:#000000;">a. Funcionamiento de semáforos?</p>
+        </div>
+        <div id="capituloXV-form101" class="list col">
+        <div>
+          
+        <div  class="list row">
+              <ion-radio name="mv13a" ng-model="survey.mv13a" ng-value="1" class="col text-center" ng-required="survey.zona<=5">1</ion-radio>
+              <ion-radio name="mv13a" ng-model="survey.mv13a" ng-value="2" class="col text-center">2</ion-radio>
+              <ion-radio name="mv13a" ng-model="survey.mv13a" ng-value="3" class="col text-center">3</ion-radio>
+              <ion-radio name="mv13a" ng-model="survey.mv13a" ng-value="4" class="col text-center">4</ion-radio>
+              <ion-radio name="mv13a" ng-model="survey.mv13a" ng-value="5" class="col text-center">5</ion-radio>
+              <a ng-show="survey.zona<=6" ng-click="survey.mv13a=''" class="button button-balanced">Limpiar</a>
+        </div>
+            </div>
+        </div>
+      </div>
+      <div class="item item-body" id="capituloXV-list-item-container114">
+        <div id="capituloXV-markdown162" class="show-list-numbers-and-dots col">
+          <p style="color:#000000;">b. Las cebras para paso peatonal?</p>
+        </div>
+        <div id="capituloXV-form51" class="list col">
+          <div>
+            
+          <div  class="list row">
+              <ion-radio name="mv13b" ng-model="survey.mv13b" ng-value="1" class="col text-center" ng-required="survey.zona<=5">1</ion-radio>
+              <ion-radio name="mv13b" ng-model="survey.mv13b" ng-value="2" class="col text-center">2</ion-radio>
+              <ion-radio name="mv13b" ng-model="survey.mv13b" ng-value="3" class="col text-center">3</ion-radio>
+              <ion-radio name="mv13b" ng-model="survey.mv13b" ng-value="4" class="col text-center">4</ion-radio>
+              <ion-radio name="mv13b" ng-model="survey.mv13b" ng-value="5" class="col text-center">5</ion-radio>
+               <a ng-show="survey.zona<=6" ng-click="survey.mv13b=''" class="button button-balanced">Limpiar</a>
+          </div>
+            </div>
+        </div>
+      </div>
+      <div class="item item-body" id="capituloXV-list-item-container115">
+        <div id="capituloXV-markdown164" class="show-list-numbers-and-dots col">
+          <p style="color:#000000;">c. Agentes o Policías de tránsito?</p>
+        </div>
+        <div id="capituloXV-form54" class="list col">
+          <div>
+            
+          <div  class="list row">
+              <ion-radio name="mv13c" ng-model="survey.mv13c" ng-value="1" class="col text-center" ng-required="survey.zona<=5">1</ion-radio>
+              <ion-radio name="mv13c" ng-model="survey.mv13c" ng-value="2" class="col text-center">2</ion-radio>
+              <ion-radio name="mv13c" ng-model="survey.mv13c" ng-value="3" class="col text-center">3</ion-radio>
+              <ion-radio name="mv13c" ng-model="survey.mv13c" ng-value="4" class="col text-center">4</ion-radio>
+              <ion-radio name="mv13c" ng-model="survey.mv13c" ng-value="5" class="col text-center">5</ion-radio>
+               <a ng-show="survey.zona<=6" ng-click="survey.mv13c=''" class="button button-balanced">Limpiar</a>
+          </div>
+            </div>
+        </div>
+      </div>
+      <div class="item item-body" id="capituloXV-list-item-container117">
+        <div id="capituloXV-markdown175" class="show-list-numbers-and-dots col">
+          <p style="color:#000000;">d. Las campañas educativas?</p>
+        </div>
+        <div id="capituloXV-form67" class="list col">
+          <div>
+            
+          <div  class="list row">
+              <ion-radio name="13d" ng-model="survey.mv13d" ng-value="1" class="col text-center" ng-required="survey.zona<=5">1</ion-radio>
+              <ion-radio name="13d" ng-model="survey.mv13d" ng-value="2" class="col text-center">2</ion-radio>
+              <ion-radio name="13d" ng-model="survey.mv13d" ng-value="3" class="col text-center">3</ion-radio>
+              <ion-radio name="13d" ng-model="survey.mv13d" ng-value="4" class="col text-center">4</ion-radio>
+              <ion-radio name="13d" ng-model="survey.mv13d" ng-value="5" class="col text-center">5</ion-radio>
+               <a ng-show="survey.zona<=6" ng-click="survey.mv13d=''" class="button button-balanced">Limpiar</a>
+          </div>
+            </div>
+        </div>
+      </div>
+      <div class="item item-body" id="capituloXV-list-item-container122">
+        <div id="capituloXV-markdown176" class="show-list-numbers-and-dots col">
+          <p style="color:#000000;">e.El control al cumplimiento de normas de tránsito?</p>
+        </div>
+        <div id="capituloXV-form68" class="list col">
+          <div>
+            
+          <div  class="list row">
+              <ion-radio name="mv13e" ng-model="survey.mv13e" ng-value="1" class="col text-center" ng-required="survey.zona<=5">1</ion-radio>
+              <ion-radio name="mv13e" ng-model="survey.mv13e" ng-value="2" class="col text-center">2</ion-radio>
+              <ion-radio name="mv13e" ng-model="survey.mv13e" ng-value="3" class="col text-center">3</ion-radio>
+              <ion-radio name="mv13e" ng-model="survey.mv13e" ng-value="4" class="col text-center">4</ion-radio>
+              <ion-radio name="mv13e" ng-model="survey.mv13e" ng-value="5" class="col text-center">5</ion-radio>
+               <a ng-show="survey.zona<=6" ng-click="survey.mv13e=''" class="button button-balanced">Limpiar</a>
+          </div>
+            </div>
+        </div>
+      </div>
+      <div class="item item-body" id="capituloXV-list-item-container123">
+        <div id="capituloXV-markdown177" class="show-list-numbers-and-dots col">
+          <p style="color:#000000;">f. La atención de accidentes?</p>
+        </div>
+        <div id="capituloXV-form69" class="list col">
+          <div>
+            
+          <div  class="list row">
+              <ion-radio name="mv13f" ng-model="survey.mv13f" ng-value="1" class="col text-center" ng-required="survey.zona<=5">1</ion-radio>
+              <ion-radio name="mv13f" ng-model="survey.mv13f" ng-value="2" class="col text-center">2</ion-radio>
+              <ion-radio name="mv13f" ng-model="survey.mv13f" ng-value="3" class="col text-center">3</ion-radio>
+              <ion-radio name="mv13f" ng-model="survey.mv13f" ng-value="4" class="col text-center">4</ion-radio>
+              <ion-radio name="mv13f" ng-model="survey.mv13f" ng-value="5" class="col text-center">5</ion-radio>
+               <a ng-show="survey.zona<=6" ng-click="survey.mv13f=''" class="button button-balanced">Limpiar</a>
+          </div>
+            </div>
+        </div>
+      </div>
+      <div class="item item-body" id="capituloXV-list-item-container125">
+        <div id="capituloXV-markdown178" class="show-list-numbers-and-dots col">
+          <p style="color:#000000;">g. Los paraderos en la ciudad?</p>
+        </div>
+        <div id="capituloXV-form70" class="list col">
+         <div>
+           
+         <div  class="list row">
+              <ion-radio name="mv13g" ng-model="survey.mv13g" ng-value="1" class="col text-center" ng-required="survey.zona<=5">1</ion-radio>
+              <ion-radio name="mv13g" ng-model="survey.mv13g" ng-value="2" class="col text-center">2</ion-radio>
+              <ion-radio name="mv13g" ng-model="survey.mv13g" ng-value="3" class="col text-center">3</ion-radio>
+              <ion-radio name="mv13g" ng-model="survey.mv13g" ng-value="4" class="col text-center">4</ion-radio>
+              <ion-radio name="mv13g" ng-model="survey.mv13g" ng-value="5" class="col text-center">5</ion-radio>
+               <a ng-show="survey.zona<=6" ng-click="survey.mv13g=''" class="button button-balanced">Limpiar</a>
+         </div>
+            </div>
+        </div>
+      </div>
+      <div class="item item-body" id="capituloXV-list-item-container126">
+        <div id="capituloXV-markdown179" class="show-list-numbers-and-dots col">
+          <p style="color:#000000;">h. Puentes peatonales?</p>
+        </div>
+        <div id="capituloXV-form71" class="list col">
+          <div>
+            
+          <div  class="list row">
+              <ion-radio name="mv13h" ng-model="survey.mv13h" ng-value="1" class="col text-center" ng-required="survey.zona<=5">1</ion-radio>
+              <ion-radio name="mv13h" ng-model="survey.mv13h" ng-value="2" class="col text-center">2</ion-radio>
+              <ion-radio name="mv13h" ng-model="survey.mv13h" ng-value="3" class="col text-center">3</ion-radio>
+              <ion-radio name="mv13h" ng-model="survey.mv13h" ng-value="4" class="col text-center">4</ion-radio>
+              <ion-radio name="mv13h" ng-model="survey.mv13h" ng-value="5" class="col text-center">5</ion-radio>
+               <a ng-show="survey.zona<=6" ng-click="survey.mv13h=''" class="button button-balanced">Limpiar</a>
+          </div>
+            </div>
+        </div>
+      </div>-->
+    </ion-list>
+
+<div ng-show="survey.mv26==1">
+  
+    <ion-list >
+      <ion-item class="item-divider item-text-wrap" id="capituloXV-list-item-divider67" > MV27. Comparando el servicio de Transmetro con el de los buses, busetas y colectivos, ¿el servicio del Transmetro le parece _____? <b>(ENC: LEA OPCIONES)</b> RU</ion-item>
+      <ion-radio id="capituloXV-radio172" ng-value="1" ng-model="survey.mv27" name="mv27" class="item-text-wrap" ng-required="survey.mv26==1">1 Mejor que el de buses, busetas y colectivos</ion-radio>
+      <ion-radio id="capituloXV-radio171" ng-value="2" ng-model="survey.mv27" name="mv27" class="item-text-wrap">2 Igual que el de buses, busetas y colectivos</ion-radio>
+      <ion-radio id="capituloXV-radio173" ng-value="3" ng-model="survey.mv27" name="mv27" class="item-text-wrap">3 Peor que el de buses, busetas y colectivos</ion-radio>
+
+    </ion-list>
+    <ion-list id="capituloXV-list46">
+      <ion-item class="item-divider item-text-wrap" id="capituloXV-list-item-divider72"> MV28. <b>(ENC: ENTREGUE TARJETA SATISFACCIÓN)</b> ¿Qué tan satisfecho(a) está usted con los siguientes aspectos del Transmetro, usando estas opciones? Puede utilizar cualquier número de la escala. <b>(ENC: LEA) RU POR ATRIBUTO</b></ion-item>
+      <div class="item item-body row" id="capituloXI-list-item-container42">
+            <div id="capituloXI-markdown205" class="show-list-numbers-and-dots col col-50">
+              <p style="color:#000000;"> </p>
+            </div>
+             <div id="capituloXI-form16" class="list col col-50">
+            <div id="capituloXI-container33" class="row">
+              <div id="capituloXI-markdown185" style="text-align:center;" class="show-list-numbers-and-dots col">
+                <p style="margin-top:0px;color:#000000;"></p>
+              </div>
+              <div id="capituloXI-markdown186" style="text-align:center;" class="show-list-numbers-and-dots col">
+                <p style="margin-top:0px;color:#000000;"></p>
+              </div>
+              <div id="capituloXI-markdown187" style="text-align:center;" class="show-list-numbers-and-dots col">
+                <p style="margin-top:0px;color:#000000;"></p>
+              </div>
+              <div id="capituloXI-markdown188" style="text-align:center;" class="show-list-numbers-and-dots col">
+                <p style="margin-top:0px;color:#000000;"></p>
+              </div>
+              <div id="capituloXI-markdown189" style="text-align:center;" class="show-list-numbers-and-dots col">
+                <p style="margin-top:0px;color:#000000;"></p>
+              </div>
+              <div id="capituloXI-markdown189" style="text-align:center;" class="show-list-numbers-and-dots col">
+                <p style="margin-top:0px;color:#000000;">NS</p>
+              </div>
+            </div>
+          </div>
+          </div>
+      <div class="item item-body row"
+        id="capituloXV-list-item-container130">
+        <div id="capituloXV-markdown219" class="show-list-numbers-and-dots col col-33">
+          <p style="color:#000000;">1 Frecuencia de rutas troncales y de rutas alimentadoras</p>
+        </div>
+        <div id="capituloXV-form75" class="list col col-66">
+           <div>
+             
+           <div  class="list row">
+              <ion-radio name="mv28a" ng-model="survey.mv281" ng-value="1" class="col text-center" ng-required="survey.mv26==1">1</ion-radio>
+              <ion-radio name="mv28a" ng-model="survey.mv281" ng-value="2" class="col text-center">2</ion-radio>
+              <ion-radio name="mv28a" ng-model="survey.mv281" ng-value="3" class="col text-center">3</ion-radio>
+              <ion-radio name="mv28a" ng-model="survey.mv281" ng-value="4" class="col text-center">4</ion-radio>
+              <ion-radio name="mv28a" ng-model="survey.mv281" ng-value="5" class="col text-center">5</ion-radio>
+              <ion-radio name="mv28a" ng-model="survey.mv281" ng-value="92" class="col text-center">92</ion-radio>
+           </div>
+            </div>
+        </div>
+      </div>
+      <div class="item item-body row" id="capituloXV-list-item-container131">
+        <div id="capituloXV-markdown220" class="show-list-numbers-and-dots col col-33">
+          <p style="color:#000000;">2 Tiempo de viaje en rutas troncales y en rutas alimentadoras</p>
+        </div>
+        <div id="capituloXV-form76" class="list  col col-66 ">
+          <div>
+            
+          <div  class="list row">
+              <ion-radio name="mv282" ng-model="survey.mv282" ng-value="1" class="col text-center" ng-required="survey.mv26==1">1</ion-radio>
+              <ion-radio name="mv282" ng-model="survey.mv282" ng-value="2" class="col text-center">2</ion-radio>
+              <ion-radio name="mv282" ng-model="survey.mv282" ng-value="3" class="col text-center">3</ion-radio>
+              <ion-radio name="mv282" ng-model="survey.mv282" ng-value="4" class="col text-center">4</ion-radio>
+              <ion-radio name="mv282" ng-model="survey.mv282" ng-value="5" class="col text-center">5</ion-radio>
+              <ion-radio name="mv282" ng-model="survey.mv282" ng-value="92" class="col text-center">92</ion-radio>
+          </div>
+            </div>
+        </div>
+      </div>
+      <div class="item item-body row" id="capituloXV-list-item-container132">
+        <div id="capituloXV-markdown227" class="show-list-numbers-and-dots col col-33">
+          <p style="color:#000000;">3 Cobertura de las rutas</p>
+        </div>
+        <div id="capituloXV-form77" class="list col col-66">
+           <div>
+             
+           <div  class="list row">
+              <ion-radio name="mv28c" ng-model="survey.mv283" ng-value="1" class="col text-center" ng-required="survey.mv26==1">1</ion-radio>
+              <ion-radio name="mv28c" ng-model="survey.mv283" ng-value="2" class="col text-center">2</ion-radio>
+              <ion-radio name="mv28c" ng-model="survey.mv283" ng-value="3" class="col text-center">3</ion-radio>
+              <ion-radio name="mv28c" ng-model="survey.mv283" ng-value="4" class="col text-center">4</ion-radio>
+              <ion-radio name="mv28c" ng-model="survey.mv283" ng-value="5" class="col text-center">5</ion-radio>
+              <ion-radio name="mv28c" ng-model="survey.mv283" ng-value="92" class="col text-center">92</ion-radio>
+           </div>
+            </div>
+        </div>
+      </div>
+      <div class="item item-body row" id="capituloXV-list-item-container133">
+        <div id="capituloXV-markdown232" class="show-list-numbers-and-dots col col-33">
+          <p style="color:#000000;">4 Información sobre las rutas del sistema</p>
+        </div>
+        <div id="capituloXV-form78" class="list col col-66">
+           <div>
+             
+           <div  class="list row">
+              <ion-radio name="mv28d" ng-model="survey.mv284" ng-value="1" class="col text-center" ng-required="survey.mv26==1">1</ion-radio>
+              <ion-radio name="mv28d" ng-model="survey.mv284" ng-value="2" class="col text-center">2</ion-radio>
+              <ion-radio name="mv28d" ng-model="survey.mv284" ng-value="3" class="col text-center">3</ion-radio>
+              <ion-radio name="mv28d" ng-model="survey.mv284" ng-value="4" class="col text-center">4</ion-radio>
+              <ion-radio name="mv28d" ng-model="survey.mv284" ng-value="5" class="col text-center">5</ion-radio>
+              <ion-radio name="mv28d" ng-model="survey.mv284" ng-value="92" class="col text-center">92</ion-radio>
+           </div>
+            </div>
+        </div>
+      </div>
+      <div class="item item-body row" id="capituloXV-list-item-container134">
+        <div id="capituloXV-markdown233" class="show-list-numbers-and-dots col col-33">
+          <p style="color:#000000;">5 Confort de los buses, temperatura, ruido, limpieza, iluminación disponibilidad y comodidad de las sillas</p>
+        </div>
+        <div id="capituloXV-form79" class="list col col-66">
+           <div>
+             
+           <div  class="list row">
+              <ion-radio name="mv28e" ng-model="survey.mv285" ng-value="1" class="col text-center" ng-required="survey.mv26==1">1</ion-radio>
+              <ion-radio name="mv28e" ng-model="survey.mv285" ng-value="2" class="col text-center">2</ion-radio>
+              <ion-radio name="mv28e" ng-model="survey.mv285" ng-value="3" class="col text-center">3</ion-radio>
+              <ion-radio name="mv28e" ng-model="survey.mv285" ng-value="4" class="col text-center">4</ion-radio>
+              <ion-radio name="mv28e" ng-model="survey.mv285" ng-value="5" class="col text-center">5</ion-radio>
+              <ion-radio name="mv28e" ng-model="survey.mv285" ng-value="92" class="col text-center">92</ion-radio>
+           </div>
+            </div>
+        </div>
+      </div>
+      <div class="item item-body row" id="capituloXV-list-item-container135">
+        <div id="capituloXV-markdown234" class="show-list-numbers-and-dots col col-33">
+          <p style="color:#000000;">6 Confort de las estaciones, limpieza, iluminación, temperatura, ruido, amplitud</p>
+        </div>
+        <div id="capituloXV-form80" class="list  col col-66">
+          <div>
+            
+          <div  class="list row">
+              <ion-radio name="mv28f" ng-model="survey.mv286" ng-value="1" class="col text-center" ng-required="survey.mv26==1">1</ion-radio>
+              <ion-radio name="mv28f" ng-model="survey.mv286" ng-value="2" class="col text-center">2</ion-radio>
+              <ion-radio name="mv28f" ng-model="survey.mv286" ng-value="3" class="col text-center">3</ion-radio>
+              <ion-radio name="mv28f" ng-model="survey.mv286" ng-value="4" class="col text-center">4</ion-radio>
+              <ion-radio name="mv28f" ng-model="survey.mv286" ng-value="5" class="col text-center">5</ion-radio>
+              <ion-radio name="mv28f" ng-model="survey.mv286" ng-value="92" class="col text-center">92</ion-radio>
+          </div>
+            </div>
+        </div>
+      </div>
+      <div class="item item-body row" id="capituloXV-list-item-container136">
+        <div id="capituloXV-markdown235" class="show-list-numbers-and-dots col col-33">
+          <p style="color:#000000;">7 Servicio de orientación en las estaciones e información por parte del personal</p>
+        </div>
+        <div id="capituloXV-form81" class="list  col col-66">
+          <div>
+            
+          <div  class="list row">
+              <ion-radio name="mv28g" ng-model="survey.mv287" ng-value="1" class="col text-center" ng-required="survey.mv26==1">1</ion-radio>
+              <ion-radio name="mv28g" ng-model="survey.mv287" ng-value="2" class="col text-center">2</ion-radio>
+              <ion-radio name="mv28g" ng-model="survey.mv287" ng-value="3" class="col text-center">3</ion-radio>
+              <ion-radio name="mv28g" ng-model="survey.mv287" ng-value="4" class="col text-center">4</ion-radio>
+              <ion-radio name="mv28g" ng-model="survey.mv287" ng-value="5" class="col text-center">5</ion-radio>
+              <ion-radio name="mv28g" ng-model="survey.mv287" ng-value="92" class="col text-center">92</ion-radio>
+          </div>
+            </div>
+        </div>
+      </div>
+      <div class="item item-body row" id="capituloXV-list-item-container137">
+        <div id="capituloXV-markdown236" class="show-list-numbers-and-dots col col-33">
+          <p style="color:#000000;">8 Venta y recarga de tarjetas dentro de las estaciones</p>
+        </div>
+        <div id="capituloXV-form82" class="list col col-66">
+           <div>
+             
+           <div  class="list row">
+              <ion-radio name="mv28h" ng-model="survey.mv288" ng-value="1" class="col text-center" ng-required="survey.mv26==1">1</ion-radio>
+              <ion-radio name="mv28h" ng-model="survey.mv288" ng-value="2" class="col text-center">2</ion-radio>
+              <ion-radio name="mv28h" ng-model="survey.mv288" ng-value="3" class="col text-center">3</ion-radio>
+              <ion-radio name="mv28h" ng-model="survey.mv288" ng-value="4" class="col text-center">4</ion-radio>
+              <ion-radio name="mv28h" ng-model="survey.mv288" ng-value="5" class="col text-center">5</ion-radio>
+              <ion-radio name="mv28h" ng-model="survey.mv288" ng-value="92" class="col text-center">92</ion-radio>
+           </div>
+            </div>
+        </div>
+      </div>
+      <div class="item item-body row" id="capituloXV-list-item-container138">
+        <div id="capituloXV-markdown237" class="show-list-numbers-and-dots col col-33">
+          <p style="color:#000000;">9 Venta y recarga de tarjetas fuera de las estaciones</p>
+        </div>
+        <div id="capituloXV-form83" class="list col col-66">
+           <div>
+             
+           <div  class="list row">
+              <ion-radio name="mv28i" ng-model="survey.mv289" ng-value="1" class="col text-center" ng-required="survey.mv26==1">1</ion-radio>
+              <ion-radio name="mv28i" ng-model="survey.mv289" ng-value="2" class="col text-center">2</ion-radio>
+              <ion-radio name="mv28i" ng-model="survey.mv289" ng-value="3" class="col text-center">3</ion-radio>
+              <ion-radio name="mv28i" ng-model="survey.mv289" ng-value="4" class="col text-center">4</ion-radio>
+              <ion-radio name="mv28i" ng-model="survey.mv289" ng-value="5" class="col text-center">5</ion-radio>
+              <ion-radio name="mv28i" ng-model="survey.mv289" ng-value="92" class="col text-center">92</ion-radio>
+           </div>
+            </div>
+        </div>
+      </div>
+      <div class="item item-body row" id="capituloXV-list-item-container139">
+        <div id="capituloXV-markdown238" class="show-list-numbers-and-dots col col-33">
+          <p style="color:#000000;">10 Accesibilidad y circulación para las personas con algún tipo de discapacidad o con restricciones de movilidad dentro de las estaciones y los buses</p>
+        </div>
+        <div id="capituloXV-form84" class="list col col-66">
+           <div>
+             
+           <div  class="list row">
+              <ion-radio name="mv28j" ng-model="survey.mv2810" ng-value="1" class="col text-center" ng-required="survey.mv26==1">1</ion-radio>
+              <ion-radio name="mv28j" ng-model="survey.mv2810" ng-value="2" class="col text-center">2</ion-radio>
+              <ion-radio name="mv28j" ng-model="survey.mv2810" ng-value="3" class="col text-center">3</ion-radio>
+              <ion-radio name="mv28j" ng-model="survey.mv2810" ng-value="4" class="col text-center">4</ion-radio>
+              <ion-radio name="mv28j" ng-model="survey.mv2810" ng-value="5" class="col text-center">5</ion-radio>
+              <ion-radio name="mv28j" ng-model="survey.mv2810" ng-value="92" class="col text-center">92</ion-radio>
+           </div>
+            </div>
+        </div>
+      </div>
+      <div class="item item-body row" id="capituloXV-list-item-container140">
+        <div id="capituloXV-markdown239" class="show-list-numbers-and-dots col col-33">
+          <p style="color:#000000;">13 Funcionamiento de puertas automáticas y torniquetes en las estaciones</p>
+        </div>
+        <div id="capituloXV-form85" class="list  col col-66">
+          <div>
+            
+          <div  class="list row">
+              <ion-radio name="mv28k" ng-model="survey.mv2813" ng-value="1" class="col text-center" ng-required="survey.mv26==1">1</ion-radio>
+              <ion-radio name="mv28k" ng-model="survey.mv2813" ng-value="2" class="col text-center">2</ion-radio>
+              <ion-radio name="mv28k" ng-model="survey.mv2813" ng-value="3" class="col text-center">3</ion-radio>
+              <ion-radio name="mv28k" ng-model="survey.mv2813" ng-value="4" class="col text-center">4</ion-radio>
+              <ion-radio name="mv28k" ng-model="survey.mv2813" ng-value="5" class="col text-center">5</ion-radio>
+              <ion-radio name="mv28k" ng-model="survey.mv2813" ng-value="92" class="col text-center">92</ion-radio>
+          </div>
+            </div>
+        </div>
+      </div>
+      <div class="item item-body row" id="capituloXV-list-item-container141">
+        <div id="capituloXV-markdown240" class="show-list-numbers-and-dots col col-33">
+          <p style="color:#000000;">14 Difusión de programas y normas de cultura ciudadana en torno al Transmetro</p>
+        </div>
+        <div id="capituloXV-form86" class="list col col-66">
+           <div>
+             
+           <div  class="list row">
+              <ion-radio name="mv28l" ng-model="survey.mv2814" ng-value="1" class="col text-center" ng-required="survey.mv26==1">1</ion-radio>
+              <ion-radio name="mv28l" ng-model="survey.mv2814" ng-value="2" class="col text-center">2</ion-radio>
+              <ion-radio name="mv28l" ng-model="survey.mv2814" ng-value="3" class="col text-center">3</ion-radio>
+              <ion-radio name="mv28l" ng-model="survey.mv2814" ng-value="4" class="col text-center">4</ion-radio>
+              <ion-radio name="mv28l" ng-model="survey.mv2814" ng-value="5" class="col text-center">5</ion-radio>
+              <ion-radio name="mv28l" ng-model="survey.mv2814" ng-value="92" class="col text-center">92</ion-radio>
+           </div>
+            </div>
+        </div>
+      </div>
+    </ion-list>
+
+<!--
+    <ion-list id="capituloXV-list47">
+      <ion-item class="item-divider item-text-wrap" id="capituloXV-list-item-divider73"> MV29. (ENC: ENTREGUE TARJETA MV29) Usando las opciones de esta tarjeta, donde 1 es muy bajo y 5 es muy alto, ¿cómo califica el comportamiento de los ciudadanos con el sistema de transporte Transmetro en relación con los siguientes aspectos? (ENC:
+        LEA Y ROTE ASPECTOS. RU POR ASPECTO)</ion-item>
+      <div class="item item-body row" id="capituloXV-list-item-container142">
+        <div id="capituloXV-markdown243" class="show-list-numbers-and-dots col col-33">
+          <p style="color:#000000;">3 Cuidado para mantener en buen estado las estaciones y buses del Transmetro</p>
+        </div>
+        <div id="capituloXV-form87" class="list col col-66">
+           <div>
+             
+           <div  class="list row">
+              <ion-radio name="mv29" ng-model="survey.mv29" ng-value="1" class="col text-center" ng-required="survey.mv26==1">1</ion-radio>
+              <ion-radio name="mv29" ng-model="survey.mv29" ng-value="2" class="col text-center">2</ion-radio>
+              <ion-radio name="mv29" ng-model="survey.mv29" ng-value="3" class="col text-center">3</ion-radio>
+              <ion-radio name="mv29" ng-model="survey.mv29" ng-value="4" class="col text-center">4</ion-radio>
+              <ion-radio name="mv29" ng-model="survey.mv29" ng-value="5" class="col text-center">5</ion-radio>
+              <ion-radio name="mv29" ng-model="survey.mv29" ng-value="92" class="col text-center">92</ion-radio>
+           </div>
+            </div>
+        </div>
+      </div>
+    </ion-list>
+
+  -->
+    <ion-list id="capituloXV-list48">
+      <ion-item class="item-divider item-text-wrap" id="capituloXV-list-item-divider74"> <b>VV30. (ENC: ENTREGUE TARJETAS.)</b> A continuación, le voy a entregar unas tarjetas para que por favor  me diga, ¿En orden de importancia, cuáles serían los tres problemas más graves en relación con la seguridad y convivencia que se presentan en Transmetro? Por favor, mencióneme solo tres de estos problemas <b>(ENC: ACEPTE DOS TEMAS);</b> si no identifica ninguno por favor decirlo. </ion-item>
+       
+       <div class="item item-body row" id="capituloXI-list-item-container42">
+          <div id="capituloXI-markdown205" class="show-list-numbers-and-dots col col-50">
+            <p style="color:#000000;"> </p><p class="balanced"><b>Temas seleccionados: 1. {{order.problema1}} - {{order.problema2}} - {{order.problema3}}</b></p>
+          </div>
+          <div id="capituloXI-form16" class="list col col-50">
+             <div id="capituloXI-container33" class="row">
+          <div id="capituloXI-markdown185" style="text-align:center;" class="show-list-numbers-and-dots col">
+            <p style="margin-top:0px;color:#000000;">1er Tema más importante: {{order.problema1}}</p>
+          </div>
+          <div id="capituloXI-markdown186" style="text-align:center;" class="show-list-numbers-and-dots col">
+            <p style="margin-top:0px;color:#000000;">2do. Tema más importante: {{order.problema2}}</p>
+          </div>
+          <div id="capituloXI-markdown187" style="text-align:center;" class="show-list-numbers-and-dots col">
+            <p style="margin-top:0px;color:#000000;">3er Tema más importante: {{order.problema3}}</p>
+          </div>
+           
+        </div>
+          </div>
+        </div>
+        
+      
+        <div class="item item-body row" id="capituloXI-list-item-container42">
+          <div id="capituloXI-markdown205" class="show-list-numbers-and-dots col col-50">
+            <p style="color:#000000;">1.  Inseguridad y vandalismo en el sistema</p>
+          </div>
+          <div id="capituloXI-form16" class="list col col-50">
+            <div  class="list row">
+              <ion-radio name="problema1" ng-model="order.problema1" ng-value="'vv301'" class="col text-center" >1</ion-radio>
+              <ion-radio name="problema2" ng-model="order.problema2" ng-value="'vv301'" class="col text-center" >2</ion-radio>
+              <ion-radio name="problema3" ng-model="order.problema3" ng-value="'vv301'" class="col text-center" >3</ion-radio>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="item item-body row" id="capituloXI-list-item-container42">
+          <div id="capituloXI-markdown205" class="show-list-numbers-and-dots col col-50">
+            <p style="color:#000000;">2.  Falta de cultura ciudadana</p>
+          </div>
+          <div id="capituloXI-form16" class="list col col-50">
+            <div  class="list row">
+              <ion-radio name="problema1" ng-model="order.problema1" ng-value="'vv302'" class="col text-center" >1</ion-radio>
+              <ion-radio name="problema2" ng-model="order.problema2" ng-value="'vv302'" class="col text-center" >2</ion-radio>
+              <ion-radio name="problema3" ng-model="order.problema3" ng-value="'vv302'" class="col text-center" >3</ion-radio>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="item item-body row" id="capituloXI-list-item-container42">
+          <div id="capituloXI-markdown205" class="show-list-numbers-and-dots col col-50">
+            <p style="color:#000000;">3.  Mal estado de los buses y articulados</p>
+          </div>
+          <div id="capituloXI-form16" class="list col col-50">
+            <div  class="list row">
+              <ion-radio name="problema1" ng-model="order.problema1" ng-value="'vv303'" class="col text-center" >1</ion-radio>
+              <ion-radio name="problema2" ng-model="order.problema2" ng-value="'vv303'" class="col text-center" >2</ion-radio>
+              <ion-radio name="problema3" ng-model="order.problema3" ng-value="'vv303'" class="col text-center" >3</ion-radio>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="item item-body row" id="capituloXI-list-item-container42">
+          <div id="capituloXI-markdown205" class="show-list-numbers-and-dots col col-50">
+            <p style="color:#000000;">4.  Mal estado de la infraestructura (señalización y estaciones)</p>
+          </div>
+          <div id="capituloXI-form16" class="list col col-50">
+            <div  class="list row">
+              <ion-radio name="problema1" ng-model="order.problema1" ng-value="'vv304'" class="col text-center" >1</ion-radio>
+              <ion-radio name="problema2" ng-model="order.problema2" ng-value="'vv304'" class="col text-center" >2</ion-radio>
+              <ion-radio name="problema3" ng-model="order.problema3" ng-value="'vv304'" class="col text-center" >3</ion-radio>
+            </div>
+          </div>
+        </div>
+
+        <div class="item item-body row" id="capituloXI-list-item-container42">
+          <div id="capituloXI-markdown205" class="show-list-numbers-and-dots col col-50">
+            <p style="color:#000000;">5.  Retraso en las rutas</p>
+          </div>
+          <div id="capituloXI-form16" class="list col col-50">
+            <div  class="list row">
+              <ion-radio name="problema1" ng-model="order.problema1" ng-value="'vv305'" class="col text-center" >1</ion-radio>
+              <ion-radio name="problema2" ng-model="order.problema2" ng-value="'vv305'" class="col text-center" >2</ion-radio>
+              <ion-radio name="problema3" ng-model="order.problema3" ng-value="'vv305'" class="col text-center" >3</ion-radio>
+            </div>
+          </div>
+        </div>
+
+        <div class="item item-body row" id="capituloXI-list-item-container42">
+          <div id="capituloXI-markdown205" class="show-list-numbers-and-dots col col-50">
+            <p style="color:#000000;">6.  Sobrecupos</p>
+          </div>
+          <div id="capituloXI-form16" class="list col col-50">
+            <div  class="list row">
+              <ion-radio name="problema1" ng-model="order.problema1" ng-value="'vv306'" class="col text-center" >1</ion-radio>
+              <ion-radio name="problema2" ng-model="order.problema2" ng-value="'vv306'" class="col text-center" >2</ion-radio>
+              <ion-radio name="problema3" ng-model="order.problema3" ng-value="'vv306'" class="col text-center" >3</ion-radio>
+            </div>
+          </div>
+        </div>
+
+        <div class="item item-body row" id="capituloXI-list-item-container42">
+          <div id="capituloXI-markdown205" class="show-list-numbers-and-dots col col-50">
+            <p style="color:#000000;">7.  Pocos articulados</p>
+          </div>
+          <div id="capituloXI-form16" class="list col col-50">
+            <div  class="list row">
+              <ion-radio name="problema1" ng-model="order.problema1" ng-value="'vv307'" class="col text-center" >1</ion-radio>
+              <ion-radio name="problema2" ng-model="order.problema2" ng-value="'vv307'" class="col text-center" >2</ion-radio>
+              <ion-radio name="problema3" ng-model="order.problema3" ng-value="'vv307'" class="col text-center" >3</ion-radio>
+            </div>
+          </div>
+        </div>
+
+        <div class="item item-body row" id="capituloXI-list-item-container42">
+          <div id="capituloXI-markdown205" class="show-list-numbers-and-dots col col-50">
+            <p style="color:#000000;">8.  Comportamiento inadecuado de los conductores y/o personal asistente de TRANSMETRO</p>
+          </div>
+          <div id="capituloXI-form16" class="list col col-50">
+            <div  class="list row">
+              <ion-radio name="problema1" ng-model="order.problema1" ng-value="'vv308'" class="col text-center" >1</ion-radio>
+              <ion-radio name="problema2" ng-model="order.problema2" ng-value="'vv308'" class="col text-center" >2</ion-radio>
+              <ion-radio name="problema3" ng-model="order.problema3" ng-value="'vv308'" class="col text-center" >3</ion-radio>
+            </div>
+          </div>
+        </div>
+
+        <div class="item item-body row" id="capituloXI-list-item-container42">
+          <div id="capituloXI-markdown205" class="show-list-numbers-and-dots col col-50">
+            <p style="color:#000000;">9.  Falta de orientación y organización en el uso de las rutas y estaciones</p>
+          </div>
+          <div id="capituloXI-form16" class="list col col-50">
+            <div  class="list row">
+              <ion-radio name="problema1" ng-model="order.problema1" ng-value="'vv309'" class="col text-center" >1</ion-radio>
+              <ion-radio name="problema2" ng-model="order.problema2" ng-value="'vv309'" class="col text-center" >2</ion-radio>
+              <ion-radio name="problema3" ng-model="order.problema3" ng-value="'vv309'" class="col text-center" >3</ion-radio>
+            </div>
+          </div>
+        </div>
+
+        <div class="item item-body row" id="capituloXI-list-item-container42">
+          <div id="capituloXI-markdown205" class="show-list-numbers-and-dots col col-50">
+            <p style="color:#000000;">10. No identifica problemas en el sistema</p>
+          </div>
+          <div id="capituloXI-form16" class="list col col-50">
+            <div  class="list row">
+              <ion-radio name="problema1" ng-model="order.problema1" ng-value="'vv3010'" class="col text-center" >1</ion-radio>
+              <ion-radio name="problema2" ng-model="order.problema2" ng-value="'vv3010'" class="col text-center" >2</ion-radio>
+              <ion-radio name="problema3" ng-model="order.problema3" ng-value="'vv3010'" class="col text-center" >3</ion-radio>
+            </div>
+          </div>
+        </div>
+
+         
+        
+
+         
+ 
+      
+    </ion-list>
+</div>
+
+    <ng-include src="'templates/seccionalertPart.html'" scope="" onload=""></ng-include>
+     <button id="capituloIdentificaciN-button265" class="button button-positive  button-block icon-right ion-android-arrow-forward" type='submit' ng-disabled="form.$invalid">Siguiente</button>
+ </form>
+  </ion-content>
+</ion-view>

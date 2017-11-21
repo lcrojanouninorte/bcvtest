@@ -1,0 +1,79 @@
+<ion-view title="Encuestas" id="page8" cache-view="false" >
+  <ion-content padding="true" style="background: url(img/5TYxgpmmRAeljkRdgzCu_6558822.jpg) no-repeat center;background-size:cover;" class="has-header">
+  
+    <div class="list card animated fadeInDown" id="dashboard-card211">
+      <ion-item class="item-avatar item-icon-right positive" id="dashboard-list-item81">
+        <img src="img/encuesta.png">
+
+        <h2positive>
+          {{user.name}}
+          <p>Bienvenido al Sitema de encuestas | {{user.estado}}</p>
+
+        </h2positive>
+        <i ng-click="actualizar()" class="icon ion-refresh" style="font-size: 16px">Actualizar</i>
+ 
+
+      </ion-item>
+      <div class=" item item-image">
+        <img src="img/logo BQCV slogan y 10 años.png" style="display: block; width: 40%; height: auto; margin-left: auto; margin-right: auto; margin-top: 20px; margin-bottom: 20px;">
+      </div>
+    </div>
+
+ <span us-spinner spinner-key="spinner-1"></span>
+  
+    <div ng-if="!isSupervisor()">
+      <a ui-sref="informaciN" id="dashboard-button46" ng-click="new_model()" class="wow fadeInUp button button-balanced  button-block icon ion-android-add-circle"> Crear Nueva Encuesta</a>
+      <div class="list card" id="dashboard-card213">
+        <ion-item class="item-divider bar bar-positive" id="dashboard-list-item-divider8"> ENCUESTAS REALIZADAS</ion-item>
+        <span us-spinner spinner-on="pouch.isActive"></span>
+        <form id="dashboard-form36" class="list">
+          <label class="item item-input" id="dashboard-search1" name="search">
+            <i class="icon ion-search placeholder-icon"></i>
+            <input type="search" placeholder="Buscar por IDM" ng-model="search">
+          </label>
+        </form>
+        <ion-item  ng-class="{'balanced':survey.estado=='finalizado'}" class="item-icon-left survey-item" id="dashboard-list-item86"  ng-repeat="survey in surveylist | filter:search | orderBy:['IDM','estado']:[true,false]" ng-click="load(survey._id, survey.estado)">
+          <i ng-class="{'balanced':survey.estado=='finalizado','ion-android-done':survey.estado=='finalizado', 'ion-alert':survey.estado!='finalizado'}"></i> IDM: {{survey.username}}_{{survey.IDM}} <br>Fecha: {{survey.fecha}} - Hora: {{survey.hinicio}}
+          <span class="item-note item-text-wrap"> Localidad {{survey.localidad}} - Vivienda {{survey.vivienda}} - Sector {{survey.sector}} - Manzana {{survey.manzana}} - Estado: {{survey.estado}} </span>
+        </ion-item>
+        <ion-item class="item-divider" id="dashboard-list-item-divider9"> </ion-item>
+      </div>
+
+      <div class="list card" id="dashboard-card213">
+        <ion-item class="item-divider bar bar-positive" id="dashboard-list-item-divider8"> INCIDENCIAS REGISTRADAS</ion-item>
+        <form id="dashboard-form3633" class="list">
+          <label class="item item-input" id="dashboard-search1" name="search_inc">
+            <i class="icon ion-search placeholder-icon"></i>
+            <input type="search" placeholder="Buscar por IDM" ng-model="search_inc">
+          </label>
+        </form>
+        <ion-item class="item-icon-left survey-item" id="dashboard-list-item886"  ng-repeat="incidencia in incidenciaslist | filter:search_inc | orderBy:['IDM']:true" ng-click="load(incidencia._id, incidencia.estado, incidencia.R)">
+          <i class="icon ion-ionic"></i>Incidencia: F{{incidencia.R}} - {{incidencia.IDM}} <br> Fecha: {{incidencia.fecha}} - Hora: {{incidencia.hinicio}}
+
+          <span class="item-note item-text-wrap"> Zona: {{incidencia.localidad}} - Vivienda {{incidencia.vivienda}} - Sector {{incidencia.sector}} - Manzana {{incidencia.manzana}} </span>
+        </ion-item>
+        <ion-item class="item-divider" id="dashboard-list-item-divider9"> </ion-item>
+      </div>
+    </div>
+
+    <div ng-if="isSupervisor()">
+       
+      <div class="list card" id="dashboard-card213">
+        <ion-item class="item-divider bar bar-positive" id="dashboard-list-item-divider8"> Encuestadores</ion-item>
+        <form id="dashboard-form3633" class="list">
+          <label class="item item-input" id="dashboard-search1" name="search_inc">
+            <i class="icon ion-search placeholder-icon"></i>
+            <input type="search" placeholder="Buscar por Nombre" ng-model="search_encu">
+          </label>
+        </form>
+        <ion-item class="item-icon-left survey-item" id="dashboard-list-item886"  ng-repeat=" encuestador in user.profile.encuestadores | filter:search_encu" ng-click="load_encuestador(encuestador)">
+          <i class="icon ion-ionic"></i>{{encuestador}} 
+        </ion-item>
+        <ion-item class="item-divider" id="dashboard-list-item-divider9"> </ion-item>
+      </div>
+
+    </div>
+        Cookies? {{!pouch.isActive}}
+  </ion-content>
+
+</ion-view>

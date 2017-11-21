@@ -1,0 +1,213 @@
+  <!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    
+    
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    
+    <link href="css/ionic.app.css" rel="stylesheet">
+   
+
+    <style type="text/css">
+      .platform-ios .manual-ios-statusbar-padding{
+        padding-top:20px;
+      }
+      .manual-remove-top-padding{
+        padding-top:0px; 
+      }
+      .manual-remove-top-padding .scroll{
+        padding-top:0px !important;
+      }
+      ion-list.manual-list-fullwidth div.list, .list.card.manual-card-fullwidth {
+        margin-left:-10px;
+        margin-right:-10px;
+      }
+      ion-list.manual-list-fullwidth div.list > .item, .list.card.manual-card-fullwidth > .item {
+        border-radius:0px;
+        border-left:0px;
+        border-right: 0px;
+      }
+      .show-list-numbers-and-dots ul{
+        list-style-type: disc;
+        padding-left:40px;
+      }
+      .show-list-numbers-and-dots ol{
+        list-style-type: decimal;
+        padding-left:40px;
+      }
+      .survey-item.ng-enter-stagger {
+        -webkit-animation-delay:200ms;
+        animation-delay:200ms;
+
+        /* override to make sure it's not inherited from other styles */
+        -webkit-animation-duration:0;
+        animation-duration:0;
+      }
+      .survey-item.ng-enter {
+          -webkit-animation: fadeInLeft 1s;
+          animation: fadeInLeft 1s;
+      }
+    </style>
+     <link href="css/animate.min.css" rel="stylesheet">
+    
+
+    <script src="js/app.js"></script>
+    <script src="js/run.js"></script>
+    <script src="js/controllers.js"></script>
+    <script src="js/routes.js"></script>
+    
+     
+    <script src="mylibs/moment.min.js"></script>
+     
+    <script src="mylibs/angular-moment.min.js"></script>
+     
+    <script src="mylibs/pouchdb.min.js"></script>
+     
+    <script src="mylibs/pouchdb.authentication.js"></script>
+     
+    <script src="js/directives.js"></script>
+     
+    <script src="js/services.js"></script>
+     
+    <script src="js/auth.js"></script>
+     
+    <script src="mylibs/angular-pouchdb.js"></script>
+     
+    <script src="js/config.js"></script>
+     
+    <script src="mylibs/angular-validator.min.js"></script>
+     
+    <script src="js/pouch.js"></script>
+     
+    <script src="mylibs/angular-cookies.js"></script>
+     
+    <script src="js/popup.js"></script>
+
+    <script src="mylibs/angular-messages.min.js"></script>
+
+    <script src="mylibs/spin.js"></script>
+
+    <script src="mylibs/angular-spinner.min.js"></script>
+
+    <script src="mylibs/wow.min.js"></script>
+    <script>
+        new WOW().init();
+    </script>
+    
+    <script src="lib/ionicuirouter/ionicUIRouter.js"></script>
+    
+
+  </head>
+  <body ng-app="app" animation="slide-left-right-ios7">
+     
+  <div>
+
+
+
+  <ion-side-menus enable-menu-with-back-views="true" data-componentid="side-menu21">
+    <ion-side-menu-content>
+      <ion-nav-bar class="bar-positive ">
+        <ion-nav-back-button></ion-nav-back-button>
+        <ion-nav-buttons side="right">
+          <button class="button button-icon button-clear ion-navicon" menu-toggle="right"></button>
+        </ion-nav-buttons>
+      </ion-nav-bar>
+      <ion-nav-view></ion-nav-view>
+
+    </ion-side-menu-content>
+
+    <ion-side-menu side="right" id="side-menu21" ng-controller="menuCtrl">
+      <ion-header-bar class="bar-positive">
+        <div class="title item-word-wrap"> IDM: {{survey.IDM}} Incidencia: F{{survey.R}}</div>
+      </ion-header-bar>
+      <ion-content  padding="false" class="side-menu-right has-header ">
+         
+        <ion-list id="menu-list9" data-componentid="list9">
+
+          <ion-item  class="item-icon-left" id="menu-list-item72"  menu-close="" data-componentid="list-item72"  ng-click="actualizar();">
+            <i class="icon ion-android-home"></i>Dashboard</ion-item>
+     
+          <ion-item ng-show="survey._rev" class="item-icon-left item-icon-right assertive" id="menu-list-item120" ng-model="survey.f3" ng-click="set_incidencia('El entrevistado abandona', 'f3',3)" data-componentid="list-item120">
+            <i class="icon ion-android-walk item-text-wrap"></i>Entrevistado abandona (F3)
+            <span class="item-note">F3 - Registro de Incidencia</span>
+            <i class="icon ion-alert icon-accessory"></i>
+          </ion-item>
+          <ion-item ng-show="survey._rev" class="item-icon-left item-icon-right assertive" id="menu-list-item120" ng-model="survey.f4" ng-click="set_incidencia('Hogar no atiende', 'f4',4)" data-componentid="list-item120">
+            <i class="icon ion-android-hand item-text-wrap"></i>Hogar No Atienede (F4)
+            <span class="item-note">F4 - Registro de Incidencia</span>
+            <i class="icon ion-alert icon-accessory"></i>
+          </ion-item>
+
+          <ion-item ng-show="survey._rev" class="item-icon-left" id="menu-list-item97" ui-sref="informaciN({id: survey._id})" menu-close="" data-componentid="list-item97">
+            <i class="icon ion-information-circled"></i>Inicio</ion-item>
+          <ion-item ng-show="survey._rev" class="item-icon-left" id="menu-list-item73" ui-sref="capituloIdentificaciN({id: survey._id})" menu-close="" data-componentid="list-item73">
+            <i class="icon ion-android-clipboard"></i>Identificación</ion-item>
+          <ion-item ng-show="survey._rev" class="item-icon-left" id="menu-list-item74" ui-sref="fILTROS({id: survey._id})" menu-close="" data-componentid="list-item74">
+            <i class="icon ion-ionic"></i>Filtros</ion-item>
+          <ion-item ng-show="survey._rev" class="item-icon-left" id="menu-list-item71" ui-sref="capituloI({id: survey._id})" menu-close="" data-componentid="list-item71">
+            <i class="icon ion-ionic"></i>Capitulo I -CARACTERÍSTICAS SOCIODEMOGRAFICAS DEL INFORMANTE. </ion-item>
+          <ion-item ng-show="survey._rev" class="item-icon-left" id="menu-list-item99" ui-sref="capituloII({id: survey._id})" menu-close="" data-componentid="list-item99">
+            <i class="icon ion-ionic"></i>Capitulo II - ASPECTOS GENERALES - CLIMA DE OPINIÓN</ion-item>
+          <ion-item ng-show="survey._rev" class="item-icon-left" id="menu-list-item100" ui-sref="capituloIII({id: survey._id})" menu-close="" data-componentid="list-item100">
+            <i class="icon ion-ionic"></i>Capitulo III -CALIDAD DE VIDA</ion-item>
+          <ion-item ng-show="survey._rev" class="item-icon-left" id="menu-list-item101" ui-sref="capituloIV({id: survey._id})" menu-close="" data-componentid="list-item101">
+            <i class="icon ion-ionic"></i>Capitulo IV - CLIMA DE OPINIÓN ECONÓMICA</ion-item>
+          <ion-item ng-show="survey._rev" class="item-icon-left" id="menu-list-item102" ui-sref="capituloV({id: survey._id})" menu-close="" data-componentid="list-item102">
+            <i class="icon ion-ionic"></i>Capitulo V - ALIMENTACIÓN </ion-item>
+          <ion-item ng-show="survey._rev" class="item-icon-left" id="menu-list-item103" ui-sref="capituloVI({id: survey._id})" menu-close="" data-componentid="list-item103">
+            <i class="icon ion-ionic"></i>Capitulo VI - EDUCACIÓN </ion-item>
+          <ion-item ng-show="survey._rev" class="item-icon-left" id="menu-list-item104" ui-sref="capituloVII({id: survey._id})" menu-close="" data-componentid="list-item104">
+            <i class="icon ion-ionic"></i>Capitulo VII - SALUD </ion-item>
+          <ion-item ng-show="survey._rev" class="item-icon-left" id="menu-list-item105" ui-sref="capituloVIII({id: survey._id})" menu-close="" data-componentid="list-item105">
+            <i class="icon ion-ionic"></i>Capitulo VIII - SERVICIOS PÚBLICOS </ion-item>
+          <ion-item ng-show="survey._rev" class="item-icon-left" id="menu-list-item106" ui-sref="capituloIX({id: survey._id})" menu-close="" data-componentid="list-item106">
+            <i class="icon ion-ionic"></i>Capitulo IX - EQUIPAMIENTOS DEL BARRIO</ion-item>
+          <ion-item ng-show="survey._rev" class="item-icon-left" id="menu-list-item107" ui-sref="capituloX({id: survey._id})" menu-close="" data-componentid="list-item107">
+            <i class="icon ion-ionic"></i>Capitulo X - VIVIENDA</ion-item>
+          <ion-item ng-show="survey._rev" class="item-icon-left" id="menu-list-item108" ui-sref="capituloXI({id: survey._id})" menu-close="" data-componentid="list-item108">
+            <i class="icon ion-ionic"></i>Capitulo XI - SEGURIDAD</ion-item>
+          <ion-item ng-show="survey._rev" class="item-icon-left" id="menu-list-item109" ui-sref="capituloXII({id: survey._id})" menu-close="" data-componentid="list-item109">
+            <i class="icon ion-ionic"></i>Capitulo XII - PARTICIPACIÓN CIUDADANA</ion-item>
+          <ion-item ng-show="survey._rev" class="item-icon-left" id="menu-list-item110" ui-sref="capituloXIII({id: survey._id})" menu-close="" data-componentid="list-item110">
+            <i class="icon ion-ionic"></i>Capitulo XIII - RESPONSABILIDAD, CORRESPONSABILIDAD Y CONVIVENCIA CIUDADANA</ion-item>
+          <ion-item ng-show="survey._rev" class="item-icon-left" id="menu-list-item111" ui-sref="capituloXIV({id: survey._id})" menu-close="" data-componentid="list-item111">
+            <i class="icon ion-ionic"></i>Capitulo XIV - CULTURA, RECREACIÓN Y DEPORTE</ion-item>
+          <ion-item ng-show="survey._rev" class="item-icon-left" id="menu-list-item112" ui-sref="capituloXV({id: survey._id})" menu-close="" data-componentid="list-item112">
+            <i class="icon ion-ionic"></i>Capitulo XV - MOVILIDAD VIAL</ion-item>
+          <ion-item ng-show="survey._rev" class="item-icon-left" id="menu-list-item113" ui-sref="capituloXVI({id: survey._id})" menu-close="" data-componentid="list-item113">
+            <i class="icon ion-ionic"></i>Capitulo XVI - ESPACIO PÚBLICO</ion-item>
+          <ion-item ng-show="survey._rev" class="item-icon-left" id="menu-list-item114" ui-sref="capituloXVII({id: survey._id})" menu-close="" data-componentid="list-item114">
+            <i class="icon ion-ionic"></i>Capitulo XVII - MEDIO AMBIENTE</ion-item>
+          <ion-item ng-show="survey._rev" class="item-icon-left" id="menu-list-item115" ui-sref="capituloXVIII({id: survey._id})" menu-close="" data-componentid="list-item115">
+            <i class="icon ion-ionic"></i>Capitulo XVIII - ASPECTOS GUBERNAMENTALES - GESTIÓN PÚBLICA</ion-item>
+          <ion-item ng-show="survey._rev" class="item-icon-left" id="menu-list-item116" ui-sref="capituloXIX({id: survey._id})" menu-close="" data-componentid="list-item116">
+            <i class="icon ion-ionic"></i>Capitulo XIX - ASPECTOS GUBERNAMENTALES - CALIFICACIÓN DE GESTIÓN GLOBAL</ion-item>
+          <ion-item ng-show="survey._rev" class="item-icon-left" id="menu-list-item117" ui-sref="capituloXX({id: survey._id})" menu-close="" data-componentid="list-item117">
+            <i class="icon ion-ionic"></i>Capitulo XX - CONCEJO DE LA CIUDAD</ion-item>
+          <ion-item ng-show="survey._rev" class="item-icon-left" id="menu-list-item118" ui-sref="capituloXXI({id: survey._id})" menu-close="" data-componentid="list-item118">
+            <i class="icon ion-ionic"></i>Capitulo XXI - MÓDULO COMO VAMOS (MCV)</ion-item>
+          <ion-item ng-show="survey._rev" class="item-icon-left" id="menu-list-item119" ui-sref="fINDATOSENCUESTADO({id: survey._id})" menu-close="" data-componentid="list-item119">
+            <i class="icon ion-ionic"></i>Capitulo FIN - DATOS ENCUESTADO</ion-item>
+  
+            
+          <ion-item ng-click="unsetSurvey();"  class="item-icon-left" id="menu-list-item98" ui-sref="login({id: survey._id})" menu-close="" data-componentid="list-item98">
+            <i class="icon ion-android-exit"></i>Salir</ion-item>
+        </ion-list>
+      </ion-content>
+    </ion-side-menu>
+  </ion-side-menus>
+</div>
+  </body>
+</html>

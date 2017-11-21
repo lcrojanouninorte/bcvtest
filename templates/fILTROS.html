@@ -1,0 +1,89 @@
+<ion-view title="FILTROS" id="page4">
+  <ion-content padding="true" class="has-header">
+
+    <form name="form" class="form-horizontal"  ng-submit="submitForm('capituloI')" novalidate>
+    <ion-list id="fILTROS-list4">
+      <ion-item class="item-divider" id="fILTROS-list-item-divider1"> Presentación</ion-item>
+      <div class="item item-body" id="fILTROS-list-item-container13">
+        <div id="fILTROS-markdown18" style="text-align:justify;" class="show-list-numbers-and-dots">
+          <p style="margin-top:0px;color:#000000;">Buenos días/tarde/noches, mi nombre es <b>__________ (ENC: MENCIONE SU NOMBRE Y MUESTRE CARNET).</b> Trabajo como encuestador del estudio sobre Calidad de Vida del programa Barranquilla Cómo Vamos realizado por la Universidad del Norte con el fin de conocer sus opiniones sobre la ciudad de <b>(Barranquilla/ Soledad/ Puerto Colombia)</b> y su barrio. La entrevista tiene una duración de 40 minutos. Quisiera su importante colaboración contestando las preguntas que le leeré a continuación. Su información representa las opiniones de personas similares a Ud. Sus respuestas serán ESTRICTAMENTE CONFIDENCIALES, los resultados no se analizan en forma individual ni se identifican a los participantes. Garantizamos manejar la confidencialidad de su identidad, de acuerdo a los lineamientos del código de ética de ESOMAR y de la ley colombiana de Hábeas Data o Ley de Protección de Datos por los cuales nos regimos. Sus datos personales serán tratados conforme a nuestra Política de Tratamiento de datos personales.  Si desea confirmar la veracidad de este estudio puede comunicarse a través del correo electrónico: info@barranquillacomovamos.co o ingresar a la página WEB www.barranquillacomovamos.co. Muchas gracias por su colaboración</p>
+        </div>
+     
+          <ion-checkbox id="fILTROS-checkbox32" ng-model="survey.terminos" ng-value="1" required>Aceptar Terminos y Condiciones</ion-checkbox>
+          
+      </div>
+      <ion-item class="item-divider item-text-wrap" id="fILTROS-list-item-divider2"> FILTROS</ion-item>
+      <ion-item class="item-divider item-text-wrap" id="fILTROS-list-item-divider100"> 
+      <i class="wow infinite flash positive ion-help-circled" ng-click="popup.show('Ayuda','Si la Respuesta es No, Se Registrará la Incidencia F1')"></i> 
+      F1 ¿Podría hablar con una persona mayor de 18 años de edad o que esté más próximo a cumplir años, que lleve viviendo más de 1 año en la ciudad, <u>residente habitual de este hogar</u>, que se encuentre ahora en casa, para hacerle una encuesta para el programa
+        Barranquilla Cómo Vamos?</ion-item>
+      <ion-radio class="item-text-wrap" id="fILTROS-radio175" name="f1" ng-model="survey.f1" ng-value="1" ng-required="survey.f1 == 1" >01 Sí | Repita presentación con la persona correspondiente, y aplique F2</ion-radio>
+      <ion-radio class="assertive item-text-wrap" id="fILTROS-radio176" name="f1" class="item-text-wrap" ng-model="survey.f1" ng-value="2" ng-click="set_incidencia('Hogar Rehúsa', 'f1',1)"> 02 No | Insista; explique la importancia del estudio y la duración de la encuesta. Si definitivamente no aceptan, marque como hogar se rehúsa en el cuadro de incidencias.</ion-radio>
+    </ion-list>
+    <ion-list id="fILTROS-list72">
+
+      <ion-item class="item-divider item-text-wrap" id="fILTROS-list-item-divider121"> 
+      <i class="wow infinite flash positive ion-help-circled" ng-click="popup.show('Ayuda','Si la Respuesta es No, Se Registrará la Incidencia F2')"></i> F2 (ENC: CUANDO ESTÉ CON LA PERSONA, PRESÉNTESE DE NUEVO Y PREGUNTE) Actualmente estamos realizando un estudio para el programa privado Barranquilla Cómo Vamos para lo cual me gustaría hacerle algunas preguntas. ¿Podría responderme esta encuesta?
+        RU</ion-item>
+      <ion-radio class="item-text-wrap" id="fILTROS-radio286" name="f2" ng-model="survey.f2" ng-value="1" ng-required="survey.f1 == 1">1 Sí - (ENC: CONTINÚE)</ion-radio>
+      <ion-radio class="assertive item-text-wrap" id="fILTROS-radio287" name="f2" ng-model="survey.f2" ng-value="2" ng-click="set_incidencia('El Entrevistado  Rehúsa', 'f2', 2)">2 No - (ENC: REGISTRE COMO ENCUESTADO REHÚSA EN EL CUADRO DE INCIDENCIAS)</ion-radio>
+    </ion-list>
+    <ion-list id="fILTROS-list79">
+      <ion-item class="item-divider" id="fILTROS-list-item-divider142" > DEMOGRÁFICOS</ion-item>
+      <label class="item item-select" id="fILTROS-select7" name="estrato">
+        <span class="input-label">NSE</span>
+        <select ng-model="survey.estrato" ng-required="survey.f1 == 1 && survey.f2 != 2">
+          <option value="1">Estrato 1</option>
+          <option value="2">Estrato 2</option>
+          <option value="3">Estrato 3</option>
+          <option value="4">Estrato 4</option>
+          <option value="5">Estrato 5</option>
+          <option value="6">Estrato 6</option>
+        </select>
+      </label>
+      <label class="item item-select" id="fILTROS-select8" name="estrato">
+        <span class="input-label">EDAD</span>
+        <select ng-model="survey.edad" ng-required="survey.f1 == 1 && survey.f2 != 2">
+          <option value="1">De 18 a 25 años</option>
+          <option value="2">De 26 a 35 años</option>
+          <option value="3">De 36 a 45 años</option>
+          <option value="4">De 46 a 55 años</option>
+          <option value="5">Más de 55 años</option>
+        </select>
+      </label>
+      <label class="item item-select" id="fILTROS-select9" name="estrato">
+        <span class="input-label">SEXO</span>
+        <select ng-model="survey.sexo" ng-required="survey.f1 == 1 && survey.f2 != 2">
+          <option value="1">Hombre</option>
+          <option value="2">Mujer</option>
+        </select>
+      </label>
+      <label class="item item-select" id="fILTROS-select11" name="estrato">
+        <span class="input-label">FRANJA CAMPO</span>
+        <select ng-model="survey.fcampo" ng-required="survey.f1 == 1 && survey.f2 != 2">
+          <option value="1">0800 a 1200</option>
+          <option value="2">1201 a 1500</option>
+          <option value="3">1501 a 1800</option>
+          <option value="4">1801 a 2159</option>
+        </select>
+      </label>
+    <label class="item item-select" id="fILTROS-select11" name="estrato">
+        <span class="input-label">DIA</span>
+        <select ng-model="survey.dia" ng-required="survey.f1 == 1 && survey.f2 != 2">
+          <option value="1">Lunes</option>
+          <option value="2">Martes</option>
+          <option value="3">Miercoles</option>
+          <option value="4">Jueves</option>
+          <option value="5">Viernes</option>
+          <option value="6">Sábado</option>
+          <option value="7">Domingo</option>
+        </select>
+      </label>
+ 
+    </ion-list>
+    
+     <ng-include src="'templates/seccionalertPart.html'" scope="" onload=""></ng-include>
+    <button id="fILTROS-button40" class="button button-positive  button-block" type='submit' ng-disabled="form.$invalid">Siguiente</button>
+    </form>
+  </ion-content>
+</ion-view>

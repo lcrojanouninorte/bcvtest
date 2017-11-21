@@ -1,0 +1,89 @@
+<ion-view title="Capitulo VII" id="page15">
+  <ion-content padding="true" class="has-header">
+  <form name="form" class="form-horizontal"  ng-submit="submitForm('capituloVIII')" novalidate>
+    <h3 id="capituloVII-heading12" style="color:#000000;text-align:center;">CAPITULO VII. SALUD (SA)</h3>
+    <ion-list id="capituloVII-list28">
+     
+        
+      <ion-item class="item-divider item-text-wrap" id="capituloVII-list-item-divider36"> 
+        <b>SA12.</b> ¿A cuál régimen de seguridad social en salud está afiliado(a)? <b>(ENC: LEA OPCIONES) RU</b></ion-item>
+        <ion-radio id="capituloVII-radio127" ng-model="survey.sa12" ng-value="1" name="sa12" class="item-text-wrap"  ng-required="survey.sa11 == 1">1. Al régimen contributivo, ya sea como cotizante o como beneficiario(a)</ion-radio>
+        <ion-radio id="capituloVII-radio128" ng-model="survey.sa12" ng-value="2" name="sa12" class="item-text-wrap">2. Al régimen subsidiado o SISBEN</ion-radio>
+        <ion-radio id="capituloVII-radio129" ng-model="survey.sa12" ng-value="3" name="sa12" class="item-text-wrap">3. A algún régimen especial, como Fuerzas Armadas, Ecopetrol, Universidades Públicas, Magisterio</ion-radio>
+        <ion-radio id="capituloVII-radio130" ng-model="survey.sa12" ng-value="92" name="sa12" class="item-text-wrap">92. <b>(ENC: NO LEA)</b> No sabe</ion-radio>
+
+
+        <ion-item class="item-divider item-text-wrap" id="capituloIV-list-item-divider21"> 
+     <b> SA2(NUEVA).</b> ¿Usted o algún miembro de su hogar utilizó los servicios de salud de cualquier entidad en el último año?</ion-item>
+      <ion-radio id="capituloIV-radio68" ng-model="survey.sa2" ng-value="1" name="sa2" class="col" required>1. Si</ion-radio>
+      <ion-radio id="capituloIV-radio69" ng-model="survey.sa2" ng-value="2" name="sa2" class="col">2. No -> <b>PROG/ENC: PASE A SA6</b></ion-radio>
+      
+
+      <div ng-show="(survey.sa2 != 2)">
+        <ion-item class="item-divider item-text-wrap" id="capituloVII-list-item-divider35"> 
+        <b>SA3(NUEVA). </b>En referencia a la última cita ¿Cuántos días transcurrieron entre el momento de pedir la cita y obtener el servicio? <b>(ENC: NO LEA, ESPERE RESPUESTA) RU</b></ion-item>
+        <ion-radio id="capituloVII-radio12w2" ng-model="survey.sa3" ng-value="1" name="sa3"  class="item-text-wrap"  ng-required='(survey.sa2 != 2)'>1.  Entre 1 y 5 días</ion-radio>
+        <ion-radio id="capituloVII-radio1w23" ng-model="survey.sa3" ng-value="2" name="sa3" class="item-text-wrap">2. Entre 6 y 10 días</ion-radio>
+        <ion-radio id="capituloVII-radio1w94" ng-model="survey.sa3" ng-value="3" name="sa3" class="item-text-wrap">3. Entre 11 y 20 días</ion-radio>
+        <ion-radio id="capituloVII-radio19w4" ng-model="survey.sa3" ng-value="4" name="sa3" class="item-text-wrap">4. Entre 21 y 30 días</ion-radio>
+        <ion-radio id="capituloVII-radio1924" ng-model="survey.sa3" ng-value="5" name="sa3" class="item-text-wrap">5. Más de 30 días</ion-radio>
+        <ion-radio id="capituloVII-radio1934" ng-model="survey.sa3" ng-value="6" name="sa3" class="item-text-wrap">6. Inmediatamente, era una urgencia </ion-radio>
+
+        
+
+        <ion-item class="item-divider item-text-wrap" id="capituloVII-list-item-divider39"> 
+        <b>SA4. (ENC: ENTREGUE TARJETA SATISFACCIÓN)</b> ¿Qué tan satisfecho(a) está usted en general con el servicio de salud que recibió durante el último año, usando estas opciones? Puede utilizar cualquier número de la escala. <b>ENC: Si no recibió servicios de salud, anote la casilla correspondiente. RU</b></ion-item>
+        <div class="item item-body col" id="capituloVII-list-item-container67">
+          <div id="capituloVII-container41" class="row">
+            <div id="capituloVII-markdown253" style="text-align:center;" class="show-list-numbers-and-dots col">
+              <p style="margin-top:0px;color:#000000;font-size:9px;">Muy insatisfecho</p>
+            </div>
+            <div id="capituloVII-markdown254" style="text-align:center;" class="show-list-numbers-and-dots col">
+              <p style="margin-top:0px;color:#000000;font-size:9px;">Algo satisfecho</p>
+            </div>
+            <div id="capituloVII-markdown255" style="text-align:center;" class="show-list-numbers-and-dots col">
+              <p style="margin-top:0px;color:#000000;font-size:9px;">Ni satisfecho ni insatisfecho</p>
+            </div>
+            <div id="capituloVII-markdown256" style="text-align:center;" class="show-list-numbers-and-dots col">
+              <p style="margin-top:0px;color:#000000;font-size:9px;">Algo insatisfecho</p>
+            </div>
+            <div id="capituloVII-markdown257" style="text-align:center;" class="show-list-numbers-and-dots col">
+              <p style="margin-top:0px;color:#000000;font-size:9px;">Muy satisfecho</p>
+            </div>
+            <div id="capituloVII-markdown263" style="text-align:center;" class="show-list-numbers-and-dots col">
+              <p style="margin-top:0px;color:#000000;font-size:9px;">No recibió</p>
+            </div>
+          </div>
+          <div  class="list row">
+              <ion-radio name="sa4" ng-model="survey.sa4" ng-value="1" class="col text-center" ng-required='(survey.sa2 != 2)'>1</ion-radio>
+              <ion-radio name="sa4" ng-model="survey.sa4" ng-value="2" class="col text-center">2</ion-radio>
+              <ion-radio name="sa4" ng-model="survey.sa4" ng-value="3" class="col text-center">3</ion-radio>
+              <ion-radio name="sa4" ng-model="survey.sa4" ng-value="4" class="col text-center">4</ion-radio>
+              <ion-radio name="sa4" ng-model="survey.sa4" ng-value="5" class="col text-center">5</ion-radio>
+              <ion-radio name="sa4" ng-model="survey.sa4" ng-value="90" class="col text-center">90</ion-radio>
+            </div>
+        </div>
+    </div>
+
+
+        <ion-item class="item-divider item-text-wrap" id="capituloIV-list-item-divider21"> 
+    <b> SA6(NUEVA).</b> ¿Usted siente que en su ciudad se le está garantizando el derecho a la salud? RU</ion-item>
+      <ion-radio id="capituloIV-radio68" ng-model="survey.sa6" ng-value="1" name="sa6" class="col" required>1. Si</ion-radio>
+      <ion-radio id="capituloIV-radio69" ng-model="survey.sa6" ng-value="2" name="sa6" class="col">2. No </ion-radio>
+
+
+
+      <ion-item class="item-divider item-text-wrap" id="capituloVII-list-item-divider37"> 
+      SA22. ¿Considera usted que durante el último año su estado de salud ha sido bueno, regular o malo?</ion-item>
+      <ion-radio ng-model="survey.sa22" ng-value="1" name="sa22" required>1. Bueno</ion-radio>
+      <ion-radio ng-model="survey.sa22" ng-value="2" name="sa22">2. Regular</ion-radio>
+      <ion-radio ng-model="survey.sa22" ng-value="3" name="sa22">3. Malo</ion-radio>
+      <ion-radio ng-model="survey.sa22" ng-value="92" name="sa22">92. <b>(ENC: NO LEA)</b> No sabe</ion-radio>
+    </ion-list>
+
+    <ng-include src="'templates/seccionalertPart.html'" scope="" onload=""></ng-include>
+
+     <button  class="button button-positive  button-block icon-right ion-android-arrow-forward" type='submit' ng-disabled="form.$invalid">Siguiente</button>
+    </form>
+    
+</ion-view>

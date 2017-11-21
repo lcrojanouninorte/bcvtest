@@ -1,0 +1,71 @@
+<ion-view title="Capitulo X" id="page9">
+  <ion-content padding="true" class="has-header">
+   <form name="form" class="form-horizontal"  ng-submit="submitForm('capituloXI')" novalidate>
+    <h3 id="capituloX-heading15" style="color:#000000;text-align:center;">CAPÍTULO X. VIVIENDA (VI)</h3>
+    <ion-list id="capituloX-list12">
+      <ion-item class="item-divider item-text-wrap" id="capituloX-list-item-divider16"> VS6. ¿Usted vive en una vivienda _____? <b>(ENC: LEA OPCIONES) RU</b></ion-item>
+      <ion-radio ng-click="survey.vs6otro=''" id="capituloX-radio108" name="vs6" ng-model="survey.vs6" ng-value="1" class="item-text-wrap" required>1. Propia <b>-> PASE A VS7</b></ion-radio>
+      <ion-radio ng-click="survey.vs6otro=''" id="capituloX-radio109" name="vs6" ng-model="survey.vs6" ng-value="2" class="item-text-wrap">2. Arrendada </ion-radio>
+      <ion-radio ng-click="survey.vs6otro=''" id="capituloX-radio110" name="vs6" ng-model="survey.vs6" ng-value="3" class="item-text-wrap">3. En usufructo, es decir que con autorización del propietario Uds. ocupan esta vivienda, sin que ninguno de sus miembros sea dueño de ella y sin que se pague arriendo</ion-radio>
+      <ion-radio ng-click="survey.vs6otro=''" id="capituloX-radio111" name="vs6" ng-model="survey.vs6" ng-value="4" class="item-text-wrap">4. Ocupante de hecho, es decir que esta vivienda ha sido construida sobre un lote que no es de su propiedad o que Uds. ocupan esta vivienda sin ser dueños de la misma y sin autorización del propietario n autorización del propietario </ion-radio>
+      <ion-radio   name="vs6" ng-model="survey.vs6" ng-value="89" ng-hide="true" >1. Propia - PASE A VS7</ion-radio>
+      <label class="item item-input row" id="capituloX-input10">
+        <span class="input-label col">89 Otra. ¿Cuál? </span>
+        <input class="col" ng-model="survey.vs6otro"  type="text" placeholder="" ng-click="survey.vs6 = 89" ng-required="survey.vs6==89">
+        <ion-radio   class="col" name="vs6" ng-model="survey.vs6" ng-value="89" ></ion-radio>
+      </label>
+    </ion-list>
+
+    <div id="capituloX-form9" class="list">
+    <div ng-show="survey.vs6 != 1">
+        <ion-item class="item-divider item-text-wrap" id="capituloX-list-item-divider19"> VS6A. ¿Por qué no tiene vivienda propia? <b>(ENC: NO LEA, ESPERE RESPUESTA Y CLASIFIQUE) RM</b></ion-item>
+        <ion-checkbox id="capituloX-checkbox1" ng-model="survey.vs6a1" name="vs6a1" class="item-text-wrap">1. Le interesa comprar, pero no conoce los procedimientos </ion-checkbox>
+        <ion-checkbox id="capituloX-checkbox2" ng-model="survey.vs6a2" name="vs6a2" class="item-text-wrap">2. Le interesa comprar, no tiene para la cuota inicial</ion-checkbox>
+        <ion-checkbox id="capituloX-checkbox3" ng-model="survey.vs6a3" name="vs6a3" class="item-text-wrap">3. Tiene para la cuota inicial pero no para las cuotas mensuales</ion-checkbox>
+        <ion-checkbox id="capituloX-checkbox4" ng-model="survey.vs6a4" name="vs6a4" class="item-text-wrap">4. Le interesa, pero no tiene subsidio de vivienda </ion-checkbox>
+        <ion-checkbox id="capituloX-checkbox5" ng-model="survey.vs6a5" name="vs6a5" class="item-text-wrap">5. No encuentra la vivienda que quiere comprar </ion-checkbox>
+        <ion-checkbox id="capituloX-checkbox6" ng-model="survey.vs6a6" name="vs6a6" class="item-text-wrap">6. No hemos buscado vivienda </ion-checkbox>
+        <ion-checkbox id="capituloX-checkbox7" ng-model="survey.vs6a7" name="vs6a7" class="item-text-wrap">7. No le interesa tener casa propia </ion-checkbox>
+        <ion-checkbox id="capituloX-checkbox8" ng-model="survey.vs6a8" name="vs6a8" class="item-text-wrap">8. Tiene casa propia pero no vive en ella </ion-checkbox>
+
+        <label class="item item-input row" id="capituloX-input10">
+          <span class="input-label col">89. Otras razones, ¿cuáles? </span>
+          <input class="col" ng-model="survey.vs6aotro"  type="text" placeholder="" >
+         </label>
+ 
+      </div>
+      <ion-item class="item-divider item-text-wrap" id="capituloX-list-item-divider10"> <b>VS7. (ENC: ENTREGUE TARJETA SATISFACCIÓN)</b> Usando las opciones de esta tarjeta, En una escala de 1 a 5, donde 1 es MUY INSATISFECHO y 5 es MUY SATISFECHO, ¿qué tan satisfecho se siente con la vivienda que habita? RU</ion-item>
+      <div class="item item-body"
+        id="capituloX-list-item-container28">
+        <div id="capituloX-container27" class="row">
+          <div id="capituloX-markdown153" style="text-align:center;" class="show-list-numbers-and-dots col">
+            <p style="margin-top:0px;color:#000000;font-size:10px;">Muy insatisfecho</p>
+          </div>
+          <div id="capituloX-markdown154" style="text-align:center;" class="show-list-numbers-and-dots col">
+            <p style="margin-top:0px;color:#000000;font-size:10px;">Algo insatisfecho</p>
+          </div>
+          <div id="capituloX-markdown156" style="text-align:center;" class="show-list-numbers-and-dots col">
+            <p style="margin-top:0px;color:#000000;font-size:10px;">Ni satisfecho ni insatisfecho</p>
+          </div>
+          <div id="capituloX-markdown157" style="text-align:center;" class="show-list-numbers-and-dots col">
+            <p style="margin-top:0px;color:#000000;font-size:10px;">Algo satisfecho</p>
+          </div>
+          <div id="capituloX-markdown158" style="text-align:center;" class="show-list-numbers-and-dots col">
+            <p style="margin-top:0px;color:#000000;font-size:10px;">Muy satisfecho</p>
+          </div>
+        </div>
+         <div  class="list row">
+            <ion-radio name="vs7" ng-model="survey.vs7" ng-value="1" class="col text-center" required>1</ion-radio>
+            <ion-radio name="vs7" ng-model="survey.vs7" ng-value="2" class="col text-center">2</ion-radio>
+            <ion-radio name="vs7" ng-model="survey.vs7" ng-value="3" class="col text-center">3</ion-radio>
+            <ion-radio name="vs7" ng-model="survey.vs7" ng-value="4" class="col text-center">4</ion-radio>
+            <ion-radio name="vs7" ng-model="survey.vs7" ng-value="5" class="col text-center">5</ion-radio>
+          </div>
+      </div>
+    </div>
+    <ng-include src="'templates/seccionalertPart.html'" scope="" onload=""></ng-include>
+
+     <button  class="button button-positive  button-block icon-right ion-android-arrow-forward" type='submit' ng-disabled="form.$invalid">Siguiente</button>
+    </form>
+  </ion-content>
+</ion-view>
