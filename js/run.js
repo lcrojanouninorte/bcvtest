@@ -6,7 +6,7 @@
     .run(runBlock);
 
   /** @ngInject */
-  function runBlock($log, $stateParams,$rootScope, $state, auth, $timeout) {
+  function runBlock($log, $stateParams,$rootScope, $state, auth, $timeout, pouch) {
   		//FastClick.attach(document.body);
   	    //Redirect to login if route requires auth and you're not logged in
         $rootScope.$on('$stateChangeStart', function (event, toState, toParams) {
@@ -63,7 +63,8 @@
         });
 
     $log.debug('runBlock end');
-    
+    pouch.sync_local();
+
   }
 
 })();
