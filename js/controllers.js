@@ -771,13 +771,23 @@ angular.module('app.controllers', [])
     }
   ])
 
-  .controller('dashboardCtrl', ['pouch', 'usSpinnerService', '$scope', '$stateParams', '$log', 'Survey', 'auth', '$state', '$window', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
+  .controller('dashboardCtrl', ['Pagination', 'pouch', 'usSpinnerService', '$scope', '$stateParams', '$log', 'Survey', 'auth', '$state', '$window', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
     // You can include any angular dependencies as parameters for this function
     // TIP: Access Route Parameters for your page via $stateParams.parameterName
-    function(pouch, usSpinnerService, $scope, $stateParams, $log, Survey, auth, $state, $window) {
+    function(Pagination, pouch, usSpinnerService, $scope, $stateParams, $log, Survey, auth, $state, $window) {
       $scope.showSpin = false;
       $scope.pouch = pouch;
       $scope.isReload = $stateParams.reload;
+      $scope.pagination_settings = {
+          currentPage: 0,
+          offset: 0,
+          pageLimit: 5,
+          pageLimits: ['10', '50', '100']
+       };
+
+      $scope.pagination = Pagination.getNew(10);
+      $scope.pagination.numPages = 0;
+
 
     
 
@@ -805,6 +815,7 @@ angular.module('app.controllers', [])
         $scope.surveylist = Survey.surveys;
         $scope.incidenciaslist = Survey.incidencias;
         $scope.showSpin = false;
+        $scope.pagination.numPages = Math.ceil($scope.surveylist.length/$scope.pagination.perPage);
 
       });
 

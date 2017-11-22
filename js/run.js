@@ -62,7 +62,7 @@
 
         });
 
-    pouch.sync_local();
+   // pouch.sync_local();
 
 
     $log.debug('runBlock end');

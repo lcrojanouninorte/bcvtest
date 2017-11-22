@@ -81,7 +81,7 @@ angular.module('app.services', [])
       "ed253": "0",
       "ed254": "0",
       "ed255": "0",
-      "ed256": "", //89
+      "ed2589": "", //CAMBIAR CUANDO SOLICITEN revisar si hay 6 el 89
       "ed2590": "2",
       "ed5a": "90",
       "ed31": "",

@@ -26,8 +26,8 @@
           <input placeholder="0..99" type="number" id="capituloVI-radio106" name="ed255" class="item-text-wrap" ng-model="survey.ed255"   required>
         </label>
         <label class="item item-input" id="capituloIdentificaciN-input80" name="IDM">
-          <span class="input-label item-text-wrap col col-80">6. Otro cuál?</span>
-          <input placeholder=" " type="text" id="capituloVI-radio106" name="ed56" class="item-text-wrap" ng-model="survey.ed256" >
+          <span class="input-label item-text-wrap col col-80">89. Otro cuál?</span>
+          <input placeholder=" " type="text" id="capituloVI-radio106" name="ed56" class="item-text-wrap" ng-model="survey.ed2589" >
         </label>
         <ion-checkbox   id="capituloVI-radio107" name="ed1" class="item-text-wrap" ng-model="ed2590copy"    ng-click="survey.ed2590 = ed2590copy?1:2;" > 90. No hay niños menores de seis años <b>→ PROG/ENC: PASE A ED3</b></ion-checkbox>
  
@@ -45,13 +45,13 @@
                 <p style="margin-top:0px;color:#000000;font-size:9px;">Muy insatisfecho</p>
               </div>
               <div id="capituloVI-markdown246" style="text-align:center;" class="show-list-numbers-and-dots col">
-                <p style="margin-top:0px;color:#000000;font-size:9px;">Algo satisfecho</p>
+                <p style="margin-top:0px;color:#000000;font-size:9px;">Algo insatisfecho</p>
               </div>
               <div id="capituloVI-markdown245" style="text-align:center;" class="show-list-numbers-and-dots col">
                 <p style="margin-top:0px;color:#000000;font-size:9px;">Ni satisfecho ni insatisfecho</p>
               </div>
               <div id="capituloVI-markdown242" style="text-align:center;" class="show-list-numbers-and-dots col">
-                <p style="margin-top:0px;color:#000000;font-size:9px;">Algo insatisfecho</p>
+                <p style="margin-top:0px;color:#000000;font-size:9px;">Algo satisfecho</p>
               </div>
               <div id="capituloVI-markdown247" style="text-align:center;" class="show-list-numbers-and-dots col">
                 <p style="margin-top:0px;color:#000000;font-size:9px;">Muy satisfecho</p>
@@ -59,7 +59,7 @@
             </div>
             <div class="list row">
               
-              <div  ng-if="(survey.ed251>0 || survey.ed252>0) && (survey.ed5a == 90 || !(survey.ed5a>0)) ">
+              <div  ng-hide="true" ng-if="(survey.ed251>0 || survey.ed252>0) && (survey.ed5a == 90 || !(survey.ed5a>0)) ">
                 {{form.$invalid=true; }}
 
               </div>
@@ -112,13 +112,13 @@
                 <p style="margin-top:0px;color:#000000;font-size:9px;">Muy insatisfecho</p>
               </div>
               <div id="capituloVI-markdown246" style="text-align:center;" class="show-list-numbers-and-dots col">
-                <p style="margin-top:0px;color:#000000;font-size:9px;">Algo satisfecho</p>
+                <p style="margin-top:0px;color:#000000;font-size:9px;">Algo insatisfecho</p>
               </div>
               <div id="capituloVI-markdown245" style="text-align:center;" class="show-list-numbers-and-dots col">
                 <p style="margin-top:0px;color:#000000;font-size:9px;">Ni satisfecho ni insatisfecho</p>
               </div>
               <div id="capituloVI-markdown242" style="text-align:center;" class="show-list-numbers-and-dots col">
-                <p style="margin-top:0px;color:#000000;font-size:9px;">Algo insatisfecho</p>
+                <p style="margin-top:0px;color:#000000;font-size:9px;">Algo satisfecho</p>
               </div>
               <div id="capituloVI-markdown247" style="text-align:center;" class="show-list-numbers-and-dots col">
                 <p style="margin-top:0px;color:#000000;font-size:9px;">Muy satisfecho</p>
@@ -147,13 +147,13 @@
               <p style="margin-top:0px;color:#000000;font-size:7px;">Muy insatisfecho</p>
             </div>
             <div id="capituloVI-markdown249" style="text-align:center;" class="col">
-              <p style="margin-top:0px;color:#000000;font-size:7px;">Algo satisfecho</p>
+              <p style="margin-top:0px;color:#000000;font-size:7px;">Algo insatisfecho</p>
             </div>
             <div id="capituloVI-markdown250" style="text-align:center;" class=" col">
               <p style="margin-top:0px;color:#000000;font-size:7px;">Ni satisfecho ni insatisfecho</p>
             </div>
             <div id="capituloVI-markdown251" style="text-align:center;" class=" col">
-              <p style="margin-top:0px;color:#000000;font-size:7px;">Algo insatisfecho</p>
+              <p style="margin-top:0px;color:#000000;font-size:7px;">Algo satisfecho</p>
             </div>
             <div id="capituloVI-markdown252" style="text-align:center;" class=" col">
               <p style="margin-top:0px;color:#000000;font-size:7px;">Muy satisfecho</p>

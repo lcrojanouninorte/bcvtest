@@ -12,7 +12,7 @@ angular.module('app')
       })
       // http://159.203.135.203:5984
       var db = new pouchDB('http://159.203.135.203:5984/surveys/', { skipSetup: true });
-      // var db = new pouchDB('http://45.55.180.54:5984/surveys/', { skipSetup: true});
+       //var db = new pouchDB('http://45.55.180.54:5984/surveys/', { skipSetup: true});
 
       localDB.remote = db;
 
