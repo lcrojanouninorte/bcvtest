@@ -688,13 +688,17 @@ angular.module('app.controllers', [])
                 } else {
                   popup.show("Alerta!", "Debe ingresar algunos datos");
                 }
+              }).catch(function(err) {
+                console.log("Ocurrio un error, se ha logeado pero revisar:");
+                console.log(err);
               });
 
             } else {
               showAlert();
             }
-          } else {; //console.log("El usuario o contraseña no es correcto");
-
+          } else {;//console.log("El usuario o contraseña no es correcto");
+                  console.log("Ocurrio un error, se ha logeado pero revisar:");
+                console.log(err);
           }
         }).then(function(docs) {
           console.log(docs);
@@ -786,6 +790,7 @@ angular.module('app.controllers', [])
        };
 
       $scope.pagination = Pagination.getNew(10);
+   
       $scope.pagination.numPages = 0;
 
 

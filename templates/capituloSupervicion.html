@@ -18,14 +18,17 @@
           <input ng-model="survey.cencuestador" type="number" placeholder="C.C.:" name="cedulaEncuestador">
         </label>
       </div>
+
+
+
       <div id="fILTROS-form174" class="list row">
         <label class="item item-input col" id="fILTROS-input108" name="supervisor" >
           <span class="input-label">Supervisor:</span>
-          <input  ng-model="survey.supervisor" type="text" placeholder="Supervisor:" required>
+          <input  ng-model="survey.supervisor" type="text" placeholder="Supervisor:" >
         </label>
         <label class="item item-input col" id="fILTROS-input109" name="cedulaSupervisor" >
           <span class="input-label">C.C.:</span>
-          <input ng-model="survey.csupervisor" type="number" placeholder="C.C.:" required>
+          <input ng-model="survey.csupervisor" type="number" placeholder="C.C.:" >
         </label>
       </div>
       <div id="fILTROS-form175" class="list row">
@@ -58,7 +61,7 @@
  
      
       <ion-item class="item-divider" id="fILTROS-list-item-divider145"> Tipo de Supervisión:</ion-item>
-      <ion-radio name="tsupervision" ng-value="1" ng-model="survey.tsupervision" id="fILTROS-radio292" required>1. Presencial</ion-radio>
+      <ion-radio name="tsupervision" ng-value="1" ng-model="survey.tsupervision" id="fILTROS-radio292" >1. Presencial</ion-radio>
       <ion-radio name="tsupervision" ng-value="2" ng-model="survey.tsupervision" id="fILTROS-radio293">2. Directa Personal</ion-radio>
       <ion-radio name="tsupervision" ng-value="3" ng-model="survey.tsupervision" id="fILTROS-radio294">3. Directa Tel.</ion-radio>
       <ion-radio name="tsupervision" ng-value="4" ng-model="survey.tsupervision" id="fILTROS-radio295">4. No supervisada</ion-radio>
@@ -75,7 +78,7 @@
             <div id="fILTROS-markdown508" class="show-list-numbers-and-dots col col-center">
               <p style="margin-top:0px;color:#000000;">Encuesta verificada</p>
             </div>
-            <ion-radio id="fILTROS-radio296" ng-value="1" ng-model="survey.verificada" name="verificada" class="col" required>1. Sí</ion-radio>
+            <ion-radio id="fILTROS-radio296" ng-value="1" ng-model="survey.verificada" name="verificada" class="col" >1. Sí</ion-radio>
             <ion-radio id="fILTROS-radio297" ng-value="2" ng-model="survey.verificada" name="verificada" class="col">2. No</ion-radio>
           </div>
         </div>
@@ -92,7 +95,7 @@
           <input ng-model="survey.fverificacion" ng-class="fverificacion" type="text" placeholder="">
         </label>
         <ion-item class="item-divider" id="fILTROS-list-item-divider148"> RESULTADO</ion-item>
-        <ion-radio id="fILTROS-radio298" ng-model="survey.resultadov" ng-value="1" name="resultado" required>1. Anulado</ion-radio>
+        <ion-radio id="fILTROS-radio298" ng-model="survey.resultadov" ng-value="1" name="resultado" >1. Anulado</ion-radio>
         <ion-radio id="fILTROS-radio299" ng-model="survey.resultadov" ng-value="2" name="resultado">2. Observado</ion-radio>
         <ion-radio id="fILTROS-radio300" ng-model="survey.resultadov" ng-value="3" name="resultado">3. Efectivo</ion-radio>
         <ion-radio id="fILTROS-radio301" ng-model="survey.resultadov" ng-value="4" name="resultado">4. No contactado</ion-radio>
